@@ -1,0 +1,16 @@
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image img {
+    object-fit: cover;
+}
