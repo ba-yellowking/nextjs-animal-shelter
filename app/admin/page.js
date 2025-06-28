@@ -2,9 +2,9 @@
 
 import useModal from "@/app/hooks/useModal";
 import Modal from "@/app/ui/modal/Modal";
+import AddAnimal from "@/app/ui/form/AddAnimal";
 
 export default function AdminPage() {
-
   const [isOpen, open, close] = useModal();
 
   return (
@@ -14,15 +14,9 @@ export default function AdminPage() {
       {isOpen && (
         <Modal onClose={close}>
           <h3>Add new animal</h3>
-          <form>
-            <label htmlFor="name">
-              <input id="name" type="text" placeholder="Name" required/>
-              <button>Save</button>
-              <button onClick={close}>Cancel</button>
-            </label>
-          </form>
+          <AddAnimal onSuccess={close} />
         </Modal>
       )}
     </main>
-  )
+  );
 }
