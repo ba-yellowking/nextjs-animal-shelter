@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import db from "@/lib/db";
-import classes from "./cards.module.css";
+import classes from "./Cards.module.css";
 
 function Cards() {
 

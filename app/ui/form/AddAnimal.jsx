@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import axios from "axios";
-import classes from "./add-animals.module.css";
+import classes from "./AddAnimal.module.css";
 
 export default function AddAnimal({ onSuccess }) {
-
   const [form, setForm] = useState({
     name: "",
     age: "",
@@ -13,6 +12,7 @@ export default function AddAnimal({ onSuccess }) {
     image: "/dog1.jpg",
   });
 
+  const [preview, setPreview] = useState(null);
   const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
@@ -20,13 +20,32 @@ export default function AddAnimal({ onSuccess }) {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  function createSlug(name) {
-    return name
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, '-')        // пробелы → дефисы
-      .replace(/[^a-z0-9\-]/g, '') // убрать всё лишнее
-  }
+  const createSlug = (name) =>
+    name.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
+
+  // drag and drop handler
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+
+    // e.dataTransfer/type checks for "image/"
+    if (!file || !file.type.startsWith("image/")) {
+      setStatus("Only images allowed.");
+      return;
+    }
+
+    // e.dataTransfer.files[0].size -> 1024 * 1024 bytes = 1 Mb
+    if (file.size > 1024 * 1024 * 10) {
+      setStatus("Image too large (max 10MB)");
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(file);
+    setPreview(objectUrl);
+    setForm((prev) => ({ ...prev, image: objectUrl }));
+  };
+
+  const handleDragOver = (e) => e.preventDefault();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +55,7 @@ export default function AddAnimal({ onSuccess }) {
     try {
       const response = await axios.post("/api/animals", {
         ...form,
-        slug, // теперь передаём
+        slug,
       });
 
       if (response.status === 201) {
@@ -47,20 +66,19 @@ export default function AddAnimal({ onSuccess }) {
           description: "",
           image: "/dog1.jpg",
         });
+        setPreview(null);
         if (onSuccess) onSuccess();
       } else {
         setStatus("Unexpected response");
       }
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
       setStatus("Failed to add animal");
     }
   };
 
-
   return (
     <form className={classes.form} onSubmit={handleSubmit}>
-
       <label htmlFor="name">Name</label>
       <input
         id="name"
@@ -91,13 +109,17 @@ export default function AddAnimal({ onSuccess }) {
       />
 
       <label htmlFor="image">Image</label>
-      <input
-        id="image"
-        name="image"
-        value={form.image}
-        onChange={handleChange}
-        placeholder="Image"
-      />
+      <div
+        className={classes.dropzone}
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+      >
+        {preview ? (
+          <img src={preview} alt="Preview" className={classes.preview} />
+        ) : (
+          <p>Drag and drop image here</p>
+        )}
+      </div>
 
       <button type="submit">Save</button>
       {status && <p>{status}</p>}
