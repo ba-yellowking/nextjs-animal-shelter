@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {useRef, useState} from "react";
 import axios from "axios";
 import classes from "./AddAnimal.module.css";
 
@@ -40,6 +40,7 @@ export default function AddAnimal({ onSuccess }) {
       return;
     }
 
+    // creating a temporary url for an image preview
     const objectUrl = URL.createObjectURL(file);
     setPreview(objectUrl);
     setForm((prev) => ({ ...prev, image: objectUrl }));
@@ -75,6 +76,27 @@ export default function AddAnimal({ onSuccess }) {
       console.error(err);
       setStatus("Failed to add animal");
     }
+  };
+
+  const fileInputRef = useRef();
+
+  const handleFileSelect = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      setStatus("Only images allowed.");
+      return;
+    }
+
+    if (file.size > 1024 * 1024 * 2) {
+      setStatus("Image too large (max 2MB)");
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(file);
+    setPreview(objectUrl);
+    setForm((prev) => ({ ...prev, image: objectUrl }));
   };
 
   return (
@@ -120,6 +142,21 @@ export default function AddAnimal({ onSuccess }) {
           <p>Drag and drop image here</p>
         )}
       </div>
+
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleFileSelect}
+        style={{ display: "none" }}
+        ref={fileInputRef}
+      />
+
+      <button
+        type="button"
+        onClick={() => fileInputRef.current?.click()}
+      >
+        Choose Image
+      </button>
 
       <button type="submit">Save</button>
       {status && <p>{status}</p>}
