@@ -3,22 +3,13 @@
 import {useRef, useState} from "react";
 import axios from "axios";
 import classes from "./AddAnimal.module.css";
+import useAnimalForm from "@/app/hooks/useAnimalForm";
+import useImageUpload from "@/app/hooks/useImageUpload";
 
 export default function AddAnimal({ onSuccess }) {
-  const [form, setForm] = useState({
-    name: "",
-    age: "",
-    description: "",
-    image: "/dog1.jpg",
-  });
 
-  const [preview, setPreview] = useState(null);
-  const [status, setStatus] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
+  const { form, setForm, handleChange } = useAnimalForm();
+  const { preview, status, setStatus, handleFile, setPreview } = useImageUpload(setForm);
 
   const createSlug = (name) =>
     name.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
@@ -27,24 +18,8 @@ export default function AddAnimal({ onSuccess }) {
   const handleDrop = (e) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
-
-    // e.dataTransfer/type checks for "image/"
-    if (!file || !file.type.startsWith("image/")) {
-      setStatus("Only images allowed.");
-      return;
-    }
-
-    // e.dataTransfer.files[0].size -> 1024 * 1024 bytes = 1 Mb
-    if (file.size > 1024 * 1024 * 10) {
-      setStatus("Image too large (max 10MB)");
-      return;
-    }
-
-    // creating a temporary url for an image preview
-    const objectUrl = URL.createObjectURL(file);
-    setPreview(objectUrl);
-    setForm((prev) => ({ ...prev, image: objectUrl }));
-  };
+    handleFile(file);
+  }
 
   const handleDragOver = (e) => e.preventDefault();
 
@@ -83,20 +58,7 @@ export default function AddAnimal({ onSuccess }) {
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (!file) return;
-
-    if (!file.type.startsWith("image/")) {
-      setStatus("Only images allowed.");
-      return;
-    }
-
-    if (file.size > 1024 * 1024 * 2) {
-      setStatus("Image too large (max 2MB)");
-      return;
-    }
-
-    const objectUrl = URL.createObjectURL(file);
-    setPreview(objectUrl);
-    setForm((prev) => ({ ...prev, image: objectUrl }));
+    handleFile(file);
   };
 
   return (
@@ -117,6 +79,7 @@ export default function AddAnimal({ onSuccess }) {
         name="age"
         type="number"
         value={form.age}
+        min="0"
         onChange={handleChange}
         placeholder="Age"
       />
@@ -155,11 +118,11 @@ export default function AddAnimal({ onSuccess }) {
         type="button"
         onClick={() => fileInputRef.current?.click()}
       >
-        Choose Image
+        Browse
       </button>
 
       <button type="submit">Save</button>
-      {status && <p>{status}</p>}
+      {status && <p className={classes.status}>{status}</p>}
     </form>
   );
 }
