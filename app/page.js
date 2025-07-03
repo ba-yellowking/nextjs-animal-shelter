@@ -1,6 +1,7 @@
 import Link from "next/link";
 // import AdminPage from "@/app/admin/page";
 import classes from "./page.module.css";
+import ImageSlideshow from "@/app/components/images/imageSlideshow/ImageSlideshow";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,10 @@ export default function HomePage() {
             See animals
           </Link>
         </nav>
+
+        <div className={classes.slideShow}>
+          <ImageSlideshow/>
+        </div>
 
         {/*<section>*/}
         {/*  <AdminPage />*/}
