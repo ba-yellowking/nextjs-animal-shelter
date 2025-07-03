@@ -1,14 +1,67 @@
-.header {
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(172, 172, 172, 0.08);
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fbfbfb;
-    width: 100%;
-    padding: 1rem;
-    font-size: 24px;
+    width: 1200px;
+    height: 50px;
 }
 
-.navLinks {
+.left {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #222;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #000;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.donateButton {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.donateButton:hover {
+    background-color: #e55050;
 }

@@ -1,25 +1,25 @@
 import Link from "next/link";
 import classes from "./page.module.css";
 import ImageSlideshow from "@/app/components/images/imageSlideshow/ImageSlideshow";
+import Image from "next/image"
+import Welcome from "@/app/components/welcome/Welcome";
 
 export default function HomePage() {
   return (
     <>
-      <main className={classes.content}>
-        <section>
-          <h1>This is the animal shelter for stray dogs and cats.</h1>
-        </section>
+      <div className="container">
+        <Welcome/>
+      </div>
 
-        <nav>
-          <Link href="/animals">
-            See animals
-          </Link>
-        </nav>
+      <div className="container alt">
+        <h1 style={{fontSize: "50px"}}>How to adopt?</h1>
+      </div>
 
-        <div className={classes.slideShow}>
-          <ImageSlideshow/>
-        </div>
-      </main>
+      <nav>
+        <Link href="/animals">
+          See animals
+        </Link>
+      </nav>
     </>
   );
 }
