@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import AdminPage from "@/app/admin/page";
 import classes from "./page.module.css";
 import ImageSlideshow from "@/app/components/images/imageSlideshow/ImageSlideshow";
 
@@ -20,10 +19,6 @@ export default function HomePage() {
         <div className={classes.slideShow}>
           <ImageSlideshow/>
         </div>
-
-        {/*<section>*/}
-        {/*  <AdminPage />*/}
-        {/*</section>*/}
       </main>
     </>
   );

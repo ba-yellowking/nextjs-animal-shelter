@@ -1,5 +1,14 @@
 .header {
-    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fbfbfb;
+    width: 100%;
     padding: 1rem;
-    text-align: center;
+    font-size: 24px;
+}
+
+.navLinks {
+    display: flex;
+    gap: 20px;
 }
