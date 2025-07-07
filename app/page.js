@@ -13,13 +13,10 @@ export default function HomePage() {
 
       <div className="container alt">
         <h1 style={{fontSize: "50px"}}>How to adopt?</h1>
-      </div>
-
-      <nav>
         <Link href="/animals">
           See animals
         </Link>
-      </nav>
+      </div>
     </>
   );
 }
