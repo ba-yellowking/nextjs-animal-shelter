@@ -1,16 +1,39 @@
 .card {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ddd;
 }
 
 .image {
     position: relative;
-    width: 500px;
-    height: 500px;
-    border-radius: 8px;
+    width: 250px;
+    height: 250px;
     overflow: hidden;
 }
 
-.image img {
-    object-fit: cover;
+.info {
+    flex: 2;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.info h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #222;
+}
+
+.info p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.5;
 }
