@@ -5,12 +5,12 @@ import classes from "./page.module.css";
 export default function Animals() {
   return (
     <>
+      <div className={classes.container}>
+        <AdminPage />
+      </div>
       <div className={classes.animalsWrap}>
         <Cards/>
       </div>
-      <section>
-        <AdminPage />
-      </section>
     </>
   )
 }

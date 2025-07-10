@@ -1,27 +1,87 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 5px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 380px;
+}
+
+.form label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #333;
+}
+
+.form input,
+.form textarea {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: #0070f3;
+    box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+    outline: none;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 80px;
 }
 
 .dropzone {
-    border: 2px dashed #999;
+    border: 2px dashed #ccc;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
     color: #666;
     background: #f9f9f9;
-    cursor: pointer;
+    transition: border-color 0.3s;
+    font-size: 0.875rem;
+}
+
+.dropzone:hover {
+    border-color: #0070f3;
 }
 
 .preview {
     max-width: 100%;
-    max-height: 200px;
+    max-height: 180px;
     object-fit: cover;
     border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form button[type="button"],
+.form button[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form button[type="button"]:hover,
+.form button[type="submit"]:hover {
+    background-color: #0059c9;
 }
 
 .status {
     margin-top: 0.5rem;
-    color: green;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #28a745;
+    text-align: center;
 }

@@ -4,7 +4,7 @@ import Footer from "@/app/components/footer/Footer";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body>
         <Header/>
         <main>

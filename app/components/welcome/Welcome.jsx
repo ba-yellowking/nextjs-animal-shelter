@@ -1,5 +1,6 @@
 import classes from "./Welcome.module.css";
-import ImageSlideshow from "@/app/components/images/imageSlideshow/ImageSlideshow";
+import Slideshow from "@/app/components/images/slideshow/Slideshow";
+import Link from "next/link";
 
 export default function Welcome() {
   return (
@@ -10,10 +11,14 @@ export default function Welcome() {
         <p>Every animal deserves warmth, care, and a family.</p>
         <p>Browse, connect, and adopt — because your future friend might be waiting for you right now.</p>
         <p>Join us in making the world kinder — one paw at a time.</p>
+        <h1 style={{fontSize: "50px"}}>How to adopt?</h1>
+        <Link href="/animals">
+          See animals
+        </Link>
       </div>
 
       <div className={classes.slideShow}>
-        <ImageSlideshow/>
+        <Slideshow/>
       </div>
     </div>
   )

@@ -18,7 +18,6 @@ export async function POST(request) {
     return new Response(JSON.stringify({ success: true }), {
       status: 201,
       headers: { "Content-Type": "application/json" },
-      ololo: "ololo"
     });
   } catch (err) {
     console.error(err);
