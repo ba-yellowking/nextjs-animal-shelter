@@ -1,8 +1,8 @@
 "use client";
 
 import classes from "./Slideshow.module.css";
-import dog1 from "@/app/assets/dog1.jpg";
-import dog2 from "@/app/assets/dog2.jpg";
+import dog1 from "@/assets/dog1.jpg";
+import dog2 from "@/assets/dog2.jpg";
 import {useEffect, useState} from "react";
 import Image from 'next/image';
 

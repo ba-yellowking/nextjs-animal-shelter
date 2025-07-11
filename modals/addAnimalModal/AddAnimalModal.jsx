@@ -1,10 +1,10 @@
 "use client";
 
-import useModal from "@/app/hooks/useModal";
-import Modal from "@/app/ui/modal/Modal";
-import AddAnimal from "@/app/ui/form/AddAnimal";
+import useModal from "@/hooks/useModal";
+import Modal from "@/ui/modal/Modal";
+import AddAnimal from "@/ui/form/AddAnimal";
 
-export default function AdminPage() {
+function AddAnimalModal() {
   const [isOpen, open, close] = useModal();
 
   return (
@@ -20,3 +20,5 @@ export default function AdminPage() {
     </main>
   );
 }
+
+export default AddAnimalModal;

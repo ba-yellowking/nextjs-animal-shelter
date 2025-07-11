@@ -3,8 +3,8 @@
 import {useRef, useState} from "react";
 import axios from "axios";
 import classes from "./AddAnimal.module.css";
-import useAnimalForm from "@/app/hooks/useAnimalForm";
-import useImageUpload from "@/app/hooks/useImageUpload";
+import useAnimalForm from "@/hooks/useAnimalForm";
+import useImageUpload from "@/hooks/useImageUpload";
 
 export default function AddAnimal({ onSuccess }) {
 

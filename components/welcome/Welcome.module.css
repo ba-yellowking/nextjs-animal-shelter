@@ -28,3 +28,19 @@
     justify-content: center;
     align-items: center;
 }
+
+.cta {
+    width: 130px;
+    background-color: #6bb0ff;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.cta:hover {
+    background-color: #548ac8;
+}
