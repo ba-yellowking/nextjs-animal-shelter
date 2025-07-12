@@ -20,9 +20,13 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background-color: #f8f8f8;
 }
 
 main {
   flex: 1;
 }
 
+.main {
+  margin-top: 80px;
+}

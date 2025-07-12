@@ -1,9 +1,11 @@
 import classes from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logo.png"; // или '@/assets/logo.png' если alias настроен
+import logo from "@/assets/logo.png"; // '@/assets/logo.png' если alias настроен
+import ActiveLink from "../../ui/ActiveLink";
 
 export default function Header() {
+
   return (
     <header className={classes.outer}>
       <div className={classes.container}>
@@ -14,8 +16,8 @@ export default function Header() {
           </Link>
 
           <nav className={classes.nav}>
-            <Link href="/about">About us</Link>
-            <Link href="/contacts">Contacts</Link>
+            <ActiveLink href="/about">About us</ActiveLink>
+            <ActiveLink href="/contacts">Contacts</ActiveLink>
           </nav>
         </div>
 

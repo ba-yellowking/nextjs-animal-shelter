@@ -1,12 +1,13 @@
 .outer {
+    width: 100vw;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    padding: 16px 32px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    font-size: 18px;
-    position: sticky;
+    border-bottom: 1px solid #f6f6f6;
+    font-size: 20px;
+    position: fixed;
     top: 0;
     z-index: 1000;
 }
@@ -17,6 +18,10 @@
     align-items: center;
     width: 1200px;
     height: 50px;
+}
+
+.nav a.active {
+    color: #959595;
 }
 
 .left {
@@ -43,7 +48,7 @@
     transition: color 0.2s ease;
 }
 
-.nav a:hover {
+.nav a:not(.active):hover {
     color: #222222;
 }
 
