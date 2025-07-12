@@ -3,12 +3,12 @@ import Welcome from "@/components/welcome/Welcome";
 export default function HomePage() {
   return (
     <>
-      <div className="container">
+      <div className="containerrr">
         <Welcome/>
       </div>
 
-      <div className="container alt">
-        <h2>Second</h2>
+      <div className="containerrr alt">
+        <h2>Second...</h2>
       </div>
     </>
   );

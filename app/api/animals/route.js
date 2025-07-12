@@ -19,7 +19,9 @@ export async function POST(request) {
       status: 201,
       headers: { "Content-Type": "application/json" },
     });
-  } catch (err) {
+  }
+
+  catch (err) {
     console.error(err);
     return new Response("Error saving to database", { status: 500 });
   }
