@@ -2,7 +2,7 @@ import classes from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/logo.png"; // '@/assets/logo.png' если alias настроен
-import ActiveLink from "../../ui/ActiveLink";
+import ActiveLink from "../../ui/active-link/ActiveLink";
 
 export default function Header() {
 

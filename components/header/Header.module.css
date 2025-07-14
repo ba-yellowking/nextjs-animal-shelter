@@ -20,8 +20,9 @@
     height: 50px;
 }
 
-.nav a.active {
-    color: #959595;
+.nav {
+    display: flex;
+    gap: 22px;
 }
 
 .left {
@@ -35,21 +36,6 @@
     font-size: 24px;
     color: #222;
     text-decoration: none;
-}
-
-.nav {
-    display: flex;
-    gap: 22px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: #3e3e3e;
-    transition: color 0.2s ease;
-}
-
-.nav a:not(.active):hover {
-    color: #222222;
 }
 
 .right {
