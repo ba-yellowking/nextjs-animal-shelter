@@ -1,14 +1,12 @@
-import db from "@/lib/db";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import classes from "./page.module.css";
+import {getAnimalBySlug} from "@/lib/getAnimalsBySlug";
 
 export default function AnimalPage({ params }) {
   const { slug } = params;
 
-  const animal = db
-    .prepare("SELECT name, age, species, color, description, image FROM animals WHERE slug = ?")
-    .get(slug);
+  const animal = getAnimalBySlug(slug);
 
   if (!animal) {
     notFound();

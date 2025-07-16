@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import db from "@/lib/db";
 import classes from "./Cards.module.css";
+import {getAnimals} from "@/lib/getAnimals";
 
 function Cards() {
 
-  const animals = db.prepare("SELECT id, name, slug, age, species, color, description, image FROM animals").all();
+  const animals = getAnimals();
 
   return (
     <div className={classes.container}>
