@@ -39,6 +39,8 @@ export default function AddAnimal({ onSuccess }) {
         setForm({
           name: "",
           age: "",
+          species: "",
+          color: "",
           description: "",
           image: "/dog1.jpg",
         });
@@ -73,6 +75,19 @@ export default function AddAnimal({ onSuccess }) {
         required
       />
 
+      <label htmlFor="species">Species</label>
+      <select
+        id="species"
+        name="species"
+        value={form.species}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select species</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+      </select>
+
       <label htmlFor="age">Age</label>
       <input
         id="age"
@@ -91,6 +106,16 @@ export default function AddAnimal({ onSuccess }) {
         value={form.description}
         onChange={handleChange}
         placeholder="Description"
+      />
+
+      <label htmlFor="color">Color</label>
+      <input
+        id="color"
+        name="color"
+        value={form.color}
+        onChange={handleChange}
+        placeholder="Color"
+        required
       />
 
       <label htmlFor="image">Image</label>

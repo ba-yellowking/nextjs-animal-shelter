@@ -5,7 +5,7 @@ import classes from "./Cards.module.css";
 
 function Cards() {
 
-  const animals = db.prepare("SELECT id, name, slug, age, description, image FROM animals").all();
+  const animals = db.prepare("SELECT id, name, slug, age, species, color, description, image FROM animals").all();
 
   return (
     <div className={classes.container}>
@@ -19,6 +19,8 @@ function Cards() {
             </h2>
             <p>Age: {animal.age}</p>
             <p>{animal.description}</p>
+            <p>{animal.species}</p>
+            <p>{animal.color}</p>
             {animal.image && (
               <div className={classes.image}>
                 <Image

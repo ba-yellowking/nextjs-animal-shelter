@@ -3,7 +3,7 @@ import db from "@/lib/db";
 export async function POST(request) {
   const data = await request.json();
 
-  const { name, slug, age, description, image } = data;
+  const { name, slug, age, species, color, description, image } = data;
 
   if (!name || !image) {
     return new Response("Missing fields", { status: 400 });
@@ -11,9 +11,9 @@ export async function POST(request) {
 
   try {
     db.prepare(`
-        INSERT INTO animals (name, slug, age, description, image)
-        VALUES (?, ?, ?, ?, ?)
-    `).run(name, slug, age, description, image);
+        INSERT INTO animals (name, slug, age, species, color, description, image)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).run(name, slug, age, species, color, description, image);
 
     return new Response(JSON.stringify({ success: true }), {
       status: 201,

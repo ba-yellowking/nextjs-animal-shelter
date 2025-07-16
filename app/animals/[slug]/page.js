@@ -7,7 +7,7 @@ export default function AnimalPage({ params }) {
   const { slug } = params;
 
   const animal = db
-    .prepare("SELECT name, age, description, image FROM animals WHERE slug = ?")
+    .prepare("SELECT name, age, species, color, description, image FROM animals WHERE slug = ?")
     .get(slug);
 
   if (!animal) {
@@ -26,6 +26,8 @@ export default function AnimalPage({ params }) {
       <div className={classes.info}>
         <h1>{animal.name}</h1>
         <p>Age: {animal.age}</p>
+        <p>Species: {animal.species}</p>
+        <p>Color: {animal.color}</p>
         <p>{animal.description}</p>
       </div>
 

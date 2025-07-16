@@ -4,6 +4,8 @@ export default function useAnimalForm() {
   const [form, setForm] = useState({
     name: "",
     age: "",
+    species: "",
+    color: "",
     description: "",
     image: "/dog1.jpg",
   });
