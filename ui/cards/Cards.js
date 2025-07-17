@@ -17,10 +17,11 @@ function Cards() {
                 {animal.name}
               </Link>
             </h2>
+            <p>Species: {animal.species}</p>
             <p>Age: {animal.age}</p>
-            <p>{animal.description}</p>
-            <p>{animal.species}</p>
-            <p>{animal.color}</p>
+            <p>Color: {animal.color}</p>
+            <p>Information: {animal.description}</p>
+
             {animal.image && (
               <div className={classes.image}>
                 <Image

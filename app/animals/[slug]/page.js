@@ -26,7 +26,7 @@ export default function AnimalPage({ params }) {
         <p>Age: {animal.age}</p>
         <p>Species: {animal.species}</p>
         <p>Color: {animal.color}</p>
-        <p>{animal.description}</p>
+        <p>More information: {animal.description}</p>
       </div>
 
     </main>
