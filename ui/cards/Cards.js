@@ -1,42 +1,19 @@
-import Link from "next/link";
-import Image from "next/image";
+import { getAnimals } from "@/lib/getAnimals";
 import classes from "./Cards.module.css";
-import {getAnimals} from "@/lib/getAnimals";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import AnimalCard from "@/ui/cards/animalCard/AnimalCard";
 
-function Cards() {
-
+export default function Cards() {
   const animals = getAnimals();
 
   return (
     <div className={classes.container}>
-      {
-        animals.map((animal) => (
-          <ul key={animal.id} className={classes.animalCard}>
-            <h2>
-              <Link href={`/animals/${animal.slug}`}>
-                {animal.name}
-              </Link>
-            </h2>
-            <p>Species: {animal.species}</p>
-            <p>Age: {animal.age}</p>
-            <p>Color: {animal.color}</p>
-            <p>Information: {animal.description}</p>
-
-            {animal.image && (
-              <div className={classes.image}>
-                <Image
-                  src={animal.image}
-                  alt={animal.name}
-                  fill
-                  unoptimized
-                />
-              </div>
-            )}
-          </ul>
-        ))
-      }
+      {animals.map((animal) => (
+        <Suspense key={animal.slug} fallback={<p>Loading animal...</p>}>
+          <AnimalCard animal={animal} />
+        </Suspense>
+      ))}
     </div>
-  )
+  );
 }
-
-export default Cards;
