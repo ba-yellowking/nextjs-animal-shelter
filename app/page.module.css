@@ -2,41 +2,5 @@
     width: 1200px;
     height: 580px;
     margin: 30px auto;
-
-    border: 1px solid black;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    background-color: #f9fafb;
-}
-
-.text {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #374151;
-    font-family: system-ui, sans-serif;
-    display: flex;
-    align-items: center;
-}
-
-.dots span {
-    animation: blink 1.4s infinite;
-    animation-delay: calc(var(--i) * 0.2s);
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #6b7280;
-}
-
-.dots span:nth-child(1) {
-    --i: 0;
-}
-.dots span:nth-child(2) {
-    --i: 1;
-}
-.dots span:nth-child(3) {
-    --i: 2;
+    border: 1px solid #e8e8e8;
 }

@@ -5,3 +5,47 @@
     max-width: 1200px;
     margin: 20px;
 }
+
+.animalCard {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s ease;
+}
+
+.animalCard h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.animalCard a {
+    text-decoration: none;
+    color: #0070f3;
+}
+
+.animalCard a:hover {
+    text-decoration: underline;
+}
+
+.animalCard p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image img {
+    object-fit: cover;
+}

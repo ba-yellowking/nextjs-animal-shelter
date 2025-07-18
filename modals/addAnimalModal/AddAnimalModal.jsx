@@ -3,13 +3,14 @@
 import useModal from "@/hooks/useModal";
 import Modal from "@/ui/modal/Modal";
 import AddAnimal from "@/ui/form/AddAnimal";
+import classes from "./AddAnimalModal.module.css";
 
 function AddAnimalModal() {
   const [isOpen, open, close] = useModal();
 
   return (
     <main>
-      <h2 onClick={open}>Add animal</h2>
+      <button onClick={open} className={classes.addAnimalBtn}>Add animal</button>
 
       {isOpen && (
         <Modal onClose={close}>

@@ -1,0 +1,16 @@
+.addAnimalBtn {
+    background-color: #58b2f6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.addAnimalBtn:hover {
+    background-color: #4791ca;
+}
