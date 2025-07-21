@@ -14,7 +14,7 @@ export default async function Cards() {
   return (
     <div className={classes.container}>
       {animals.map((animal) => (
-        <ul key={animal.name} className={classes.animalCard}>
+        <ul key={animal.id} className={classes.animalCard}>
           <h2>
             <Link href={`/animals/${animal.slug}`}>
               {animal.name}

@@ -22,3 +22,6 @@ export default function Animals() {
     </>
   )
 }
+
+// <Suspense> works with server-based components only
+// This is why <Cards/>'s function should be "async" and include "await"

@@ -11,9 +11,6 @@ export default function AddAnimal({ onSuccess }) {
   const { form, setForm, handleChange } = useAnimalForm();
   const { preview, status, setStatus, handleFile, setPreview } = useImageUpload(setForm);
 
-  const createSlug = (name) =>
-    name.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
-
   // drag and drop handler
   const handleDrop = (e) => {
     e.preventDefault();
@@ -26,12 +23,9 @@ export default function AddAnimal({ onSuccess }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const slug = createSlug(form.name);
-
     try {
       const response = await axios.post("/api/animals", {
         ...form,
-        slug,
       });
 
       if (response.status === 201) {

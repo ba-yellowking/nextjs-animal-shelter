@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import classes from "./page.module.css";
 import {getAnimalBySlug} from "@/lib/getAnimalsBySlug";
 
-export default function AnimalPage({ params }) {
+export default function AnimalDetailsPage({ params }) {
   const { slug } = params;
 
+  // fetching information by slug
   const animal = getAnimalBySlug(slug);
 
   if (!animal) {
