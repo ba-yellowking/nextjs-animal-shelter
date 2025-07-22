@@ -1,22 +1,20 @@
 "use client";
 
-import {useRef, useState} from "react";
+import { useRef } from "react";
 import axios from "axios";
 import classes from "./AddAnimal.module.css";
 import useAnimalForm from "@/hooks/useAnimalForm";
 import useImageUpload from "@/hooks/useImageUpload";
 
 export default function AddAnimal({ onSuccess }) {
-
   const { form, setForm, handleChange } = useAnimalForm();
   const { preview, status, setStatus, handleFile, setPreview } = useImageUpload(setForm);
 
-  // drag and drop handler
   const handleDrop = (e) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
     handleFile(file);
-  }
+  };
 
   const handleDragOver = (e) => e.preventDefault();
 
@@ -24,9 +22,7 @@ export default function AddAnimal({ onSuccess }) {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/api/animals", {
-        ...form,
-      });
+      const response = await axios.post("/api/animals", { ...form });
 
       if (response.status === 201) {
         setStatus("Animal added!");
@@ -59,70 +55,82 @@ export default function AddAnimal({ onSuccess }) {
 
   return (
     <form className={classes.form} onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
-      <input
-        id="name"
-        name="name"
-        value={form.name}
-        onChange={handleChange}
-        placeholder="Name"
-        required
-      />
+      <div className={classes.formRow}>
+        <label htmlFor="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Name"
+          required
+        />
+      </div>
 
-      <label htmlFor="species">Species</label>
-      <select
-        id="species"
-        name="species"
-        value={form.species}
-        onChange={handleChange}
-        required
-      >
-        <option value="">Select species</option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-      </select>
+      <div className={classes.formRow}>
+        <label htmlFor="species">Species</label>
+        <select
+          id="species"
+          name="species"
+          value={form.species}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select species</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+        </select>
+      </div>
 
-      <label htmlFor="age">Age</label>
-      <input
-        id="age"
-        name="age"
-        type="number"
-        value={form.age}
-        min="0"
-        onChange={handleChange}
-        placeholder="Age"
-      />
+      <div className={classes.formRow}>
+        <label htmlFor="age">Age</label>
+        <input
+          id="age"
+          name="age"
+          type="number"
+          value={form.age}
+          min="0"
+          onChange={handleChange}
+          placeholder="Age"
+        />
+      </div>
 
-      <label htmlFor="description">Description</label>
-      <textarea
-        id="description"
-        name="description"
-        value={form.description}
-        onChange={handleChange}
-        placeholder="Description"
-      />
+      <div className={classes.formRow}>
+        <label htmlFor="color">Color</label>
+        <input
+          id="color"
+          name="color"
+          value={form.color}
+          onChange={handleChange}
+          placeholder="Color"
+          required
+        />
+      </div>
 
-      <label htmlFor="color">Color</label>
-      <input
-        id="color"
-        name="color"
-        value={form.color}
-        onChange={handleChange}
-        placeholder="Color"
-        required
-      />
+      <div className={classes.formRow}>
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          value={form.description}
+          onChange={handleChange}
+          placeholder="Description"
+        />
+      </div>
 
-      <label htmlFor="image">Image</label>
-      <div
-        className={classes.dropzone}
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-      >
-        {preview ? (
-          <img src={preview} alt="Preview" className={classes.preview} />
-        ) : (
-          <p>Drag and drop image here</p>
-        )}
+      <div className={classes.formRow}>
+        <label htmlFor="image">Image</label>
+        <div
+          className={classes.dropzone}
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+        >
+          {preview ? (
+            <img src={preview} alt="Preview" className={classes.preview} />
+          ) : (
+            <p>Drag and drop image here</p>
+          )}
+        </div>
       </div>
 
       <input
@@ -133,14 +141,13 @@ export default function AddAnimal({ onSuccess }) {
         ref={fileInputRef}
       />
 
-      <button
-        type="button"
-        onClick={() => fileInputRef.current?.click()}
-      >
-        Browse
-      </button>
+      <div className={classes.buttonGroup}>
+        <button type="button" onClick={() => fileInputRef.current?.click()}>
+          Browse
+        </button>
+        <button type="submit">Save</button>
+      </div>
 
-      <button type="submit">Save</button>
       {status && <p className={classes.status}>{status}</p>}
     </form>
   );
