@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Animal Shelter Platform
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is a web-based application built with **Next.js** (using both client and server components) and **React**, designed to simplify the process of adopting animals from shelters and to support them through donations.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework:** Next.js (React)
+- **Database:** better-sqlite3
+- **Styling:** CSS Modules
+- **Routing:** File-based routing (/app/page.js)
+- **Deployment:** TBD
 
-You can start editing the page by modifying `app/AddAnimalModal.jsx`. The page auto-updates as you edit the file.
+## Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Animal Cards** – each animal is shown as a card on the listing page, displaying name, photo, and key info.
+- **Routing** – clean and dynamic routing for each animal using slugs (`/animals/max`, etc.).
+- **Database** – built using **better-sqlite3** for fast and simple data storage.
+- **API Routes** – dynamic and RESTful API endpoints to fetch animal data.
+- **Styling** – using **CSS Modules** for scoped and modular styles.
+- **Error Handling** – custom `404` and `Error` pages.
 
-## Learn More
+## Planned Improvements
 
-To learn more about Next.js, take a look at the following resources:
+- **Adoption Request Submission** - Submitted data about users willing to adopt a pet, stored on the server.
+- **Donation Option** - API to be determined.
+- **Admin Panel** - Admin login & authorization to add, edit, delete animal cards
+- **Server-side Internationalization** - Implement locale-based routing using server components (next-intl)
+- **Responsive Improvements** - Further UI/UX polish across devices
+- **Adaptive Layout** - Improve responsiveness for various screen sizes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<div align="center">
+  <p><strong>Home Page</strong></p>
+  <img src="/Screenshot1.png" width="600" alt="Home Page" />
+</div>
 
-## Deploy on Vercel
+<br/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+  <p><strong>Animal Detail Page</strong></p>
+  <img src="/Screenshot2.png" width="600" alt="Animal Detail Page" />
+</div>

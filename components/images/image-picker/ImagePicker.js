@@ -23,10 +23,13 @@ export default function ImagePicker({label, name}) {
       return;
     }
 
+    // FileReader() - a class that creates instances
     const fileReader = new FileReader();
+    // onload - starts when the file is uploaded
     fileReader.onload = () => {
       setPickedImage(fileReader.result);
     };
+    // readAsDataURL() - converts an image to a string like "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA"
     fileReader.readAsDataURL(file);
   }
 
@@ -38,7 +41,7 @@ export default function ImagePicker({label, name}) {
           {!pickedImage && <p>No image picked yet.</p>}
           {pickedImage && <Image src={pickedImage} alt="Selected image" fill />}
         </div>
-        <input onChange={handleImageChange} ref={imageInputRef} className={classes.input} type="file" id={name} name={name} accept="image/png, image/jpeg" />
+        <input onChange={handleImageChange} ref={imageInputRef} className={classes.input} type="file" id={name} name={name} accept="image/png, image/jpeg" required />
       </div>
       <button type="button" className={classes.button} onClick={clickHandler}>
         Select an Image
