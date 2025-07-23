@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import classes from "./drag-drop.module.css"; // создадим позже
+// import classes from "./drag-drop.module.css"; // создадим позже
 
 export default function DragDropImage({ onImageSelect }) {
   const [preview, setPreview] = useState(null);

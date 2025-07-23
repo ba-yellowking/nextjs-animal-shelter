@@ -5,6 +5,7 @@ import axios from "axios";
 import classes from "./AddAnimal.module.css";
 import useAnimalForm from "@/hooks/useAnimalForm";
 import useImageUpload from "@/hooks/useImageUpload";
+import ImagePicker from "@/components/images/image-picker/ImagePicker";
 
 export default function AddAnimal({ onSuccess }) {
   const { form, setForm, handleChange } = useAnimalForm();
@@ -118,35 +119,37 @@ export default function AddAnimal({ onSuccess }) {
         />
       </div>
 
-      <div className={classes.formRow}>
-        <label htmlFor="image">Image</label>
-        <div
-          className={classes.dropzone}
-          onDrop={handleDrop}
-          onDragOver={handleDragOver}
-        >
-          {preview ? (
-            <img src={preview} alt="Preview" className={classes.preview} />
-          ) : (
-            <p>Drag and drop image here</p>
-          )}
-        </div>
-      </div>
+      {/*<div className={classes.formRow}>*/}
+      {/*  <label htmlFor="image">Image</label>*/}
+      {/*  <div*/}
+      {/*    className={classes.dropzone}*/}
+      {/*    onDrop={handleDrop}*/}
+      {/*    onDragOver={handleDragOver}*/}
+      {/*  >*/}
+      {/*    {preview ? (*/}
+      {/*      <img src={preview} alt="Preview" className={classes.preview} />*/}
+      {/*    ) : (*/}
+      {/*      <p>Drag and drop image here</p>*/}
+      {/*    )}*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileSelect}
-        style={{ display: "none" }}
-        ref={fileInputRef}
-      />
+      {/*<input*/}
+      {/*  type="file"*/}
+      {/*  accept="image/*"*/}
+      {/*  onChange={handleFileSelect}*/}
+      {/*  style={{ display: "none" }}*/}
+      {/*  ref={fileInputRef}*/}
+      {/*/>*/}
 
-      <div className={classes.buttonGroup}>
-        <button type="button" onClick={() => fileInputRef.current?.click()}>
-          Browse
-        </button>
-        <button type="submit">Save</button>
-      </div>
+      {/*<div className={classes.buttonGroup}>*/}
+      {/*  <button type="button" onClick={() => fileInputRef.current?.click()}>*/}
+      {/*    Browse*/}
+      {/*  </button>*/}
+      {/*  <button type="submit">Save</button>*/}
+      {/*</div>*/}
+
+      <ImagePicker/>
 
       {status && <p className={classes.status}>{status}</p>}
     </form>
