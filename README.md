@@ -32,14 +32,8 @@ This is a web-based application built with **Next.js** (using both client and se
 
 ## Screenshots
 
-<div align="center">
-  <p><strong>Home Page</strong></p>
-  <img src="/Screenshot1.png" width="600" alt="Home Page" />
-</div>
+### Home Page
+![Home Page](public/Screenshot1.png)
 
-<br/>
-
-<div align="center">
-  <p><strong>Animal Detail Page</strong></p>
-  <img src="/Screenshot2.png" width="600" alt="Animal Detail Page" />
-</div>
+### Animal Detail Page
+![Animal Detail Page](public/Screenshot2.png)
