@@ -1,13 +1,20 @@
+"use client";
+
 import classes from "./AddAnimalForm.module.css";
 import ImagePicker from "@/components/images/imagePicker/ImagePicker";
 import { submitNewAnimal } from "@/app/actions/submitNewAnimal";
 import SubmitPending from "@/components/forms/SubmitPending";
+import { useActionState } from "react";
 
-export default function AddAnimalForm({ onSuccess }) {
+export default function AddAnimalForm() {
+  const [state, formAction] = useActionState(submitNewAnimal, {
+    message: null,
+  });
+
   return (
     <>
       {/*setting server action*/}
-      <form className={classes.form} action={submitNewAnimal}>
+      <form className={classes.form} action={formAction}>
         <div className={classes.formRow}>
           <label htmlFor="name">Name</label>
           <input
@@ -53,7 +60,7 @@ export default function AddAnimalForm({ onSuccess }) {
         </div>
 
         <ImagePicker label="Your image" name="image" />
-
+        {state.message && <p>{state.message}</p>}
         <div className={classes.buttonGroup}>
           <SubmitPending />
         </div>
