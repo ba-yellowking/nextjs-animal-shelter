@@ -1,8 +1,9 @@
-import classes from "./AddAnimal.module.css";
-import ImagePicker from "@/components/images/image-picker/ImagePicker";
+import classes from "./AddAnimalForm.module.css";
+import ImagePicker from "@/components/images/imagePicker/ImagePicker";
 import { submitNewAnimal } from "@/app/actions/submitNewAnimal";
+import SubmitPending from "@/components/forms/SubmitPending";
 
-export default function AddAnimal({ onSuccess }) {
+export default function AddAnimalForm({ onSuccess }) {
   return (
     <>
       {/*setting server action*/}
@@ -12,7 +13,7 @@ export default function AddAnimal({ onSuccess }) {
           <input
             id="name"
             name="name"
-            // value={form.name}
+            // value={forms.name}
             placeholder="Name"
             required
           />
@@ -23,7 +24,7 @@ export default function AddAnimal({ onSuccess }) {
           <select
             id="species"
             name="species"
-            // value={form.species}
+            // value={forms.species}
             required
           >
             <option value="">Select species</option>
@@ -54,7 +55,7 @@ export default function AddAnimal({ onSuccess }) {
         <ImagePicker label="Your image" name="image" />
 
         <div className={classes.buttonGroup}>
-          <button type="submit">Add</button>
+          <SubmitPending />
         </div>
 
         {/*{status && <p className={classes.status}>{status}</p>}*/}

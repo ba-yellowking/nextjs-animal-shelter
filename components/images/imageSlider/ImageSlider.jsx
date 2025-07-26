@@ -1,24 +1,23 @@
 "use client";
 
-import classes from "./Slideshow.module.css";
+import classes from "./ImageSlider.module.css";
 import dog1 from "@/assets/dog1.jpg";
 import dog2 from "@/assets/dog2.jpg";
-import {useEffect, useState} from "react";
-import Image from 'next/image';
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
-export default function Slideshow() {
-
+export default function ImageSlider() {
   const images = [
     { image: dog1, alt: "Max" },
     { image: dog2, alt: "Luna" },
-  ]
+  ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
-        prevIndex < images.length - 1 ? prevIndex + 1 : 0
+        prevIndex < images.length - 1 ? prevIndex + 1 : 0,
       );
     }, 5000);
 
@@ -26,12 +25,12 @@ export default function Slideshow() {
   }, []);
 
   return (
-    <div className={classes.slideshow}>
+    <div className={classes.imageSlider}>
       {images.map((image, index) => (
         <Image
           key={index}
           src={image.image}
-          className={`${classes.image} ${index === currentImageIndex ? classes.active : ''}`}
+          className={`${classes.image} ${index === currentImageIndex ? classes.active : ""}`}
           alt={image.alt}
           fill
         />
@@ -39,4 +38,3 @@ export default function Slideshow() {
     </div>
   );
 }
-

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import classes from "./page.module.css";
-import {getAnimalBySlug} from "@/lib/getAnimalsBySlug";
+import { getAnimalBySlug } from "@/lib/getAnimalsBySlug";
 
-export default function AnimalDetailsPage({ params }) {
+export default async function AnimalDetailsPage({ params }) {
   const { slug } = params;
 
   // fetching information by slug
@@ -15,10 +15,14 @@ export default function AnimalDetailsPage({ params }) {
 
   return (
     <main className={classes.card}>
-
       {animal.image && (
         <div className={classes.image}>
-          <Image src={animal.image} alt={animal.name} fill style={{ objectFit: 'cover' }}/>
+          <Image
+            src={animal.image}
+            alt={animal.name}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
       )}
 
@@ -29,7 +33,6 @@ export default function AnimalDetailsPage({ params }) {
         <p>Color: {animal.color}</p>
         <p>More information: {animal.description}</p>
       </div>
-
     </main>
-  )
+  );
 }

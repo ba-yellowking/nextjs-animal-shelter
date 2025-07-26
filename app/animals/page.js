@@ -1,26 +1,25 @@
-import Cards from "@/ui/cards/Cards";
 import classes from "./page.module.css";
 import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
-import {Suspense} from "react";
+import { Suspense } from "react";
+import AnimalList from "@/components/animals/list/AnimalList";
 
 export default function Animals() {
-
   // app/animals/error.js customed error message
   // throw new Error()
 
   return (
     <>
       <div className={classes.container}>
-        <AddAnimalModal/>
+        <AddAnimalModal />
       </div>
 
       <div className={classes.animalsWrap}>
         <Suspense fallback={<p>Loading...</p>}>
-          <Cards/>
+          <AnimalList />
         </Suspense>
       </div>
     </>
-  )
+  );
 }
 
 // <Suspense> works with server-based components only
