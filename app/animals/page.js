@@ -3,6 +3,11 @@ import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { Suspense } from "react";
 import AnimalList from "@/components/animals/list/AnimalList";
 
+export const metadata = {
+  title: "Animal list",
+  description: "Animal list for adoption",
+};
+
 export default function Animals() {
   // app/animals/error.js customed error message
   // throw new Error()

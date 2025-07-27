@@ -2,13 +2,14 @@
 
 import { redirect } from "next/navigation";
 import { saveAnimal } from "@/lib/saveAnimal";
+import { revalidatePath } from "next/cache";
 
 export async function submitNewAnimal(prevState, formData) {
   // server action (async)
   // formData object collects data from inputs
 
   function isValidData(data) {
-    return !data || data.trim === "";
+    return !data || data.trim() === "";
   }
 
   const newAnimal = {
@@ -34,6 +35,11 @@ export async function submitNewAnimal(prevState, formData) {
   }
 
   await saveAnimal(newAnimal);
+
+  // revalidatePath - throw away cache when npm run build related to /animals and layout (nested pages)
+  // to revalidate all the site - "/", "layout"
+  revalidatePath("/animals");
+
   // redirecting after adding a new animal
   redirect("/animals");
 }

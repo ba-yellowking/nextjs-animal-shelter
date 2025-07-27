@@ -6,8 +6,9 @@ export default function Contacts() {
       <h1 className={classes.heading}>Contact Us</h1>
 
       <p className={classes.paragraph}>
-        We'd love to hear from you! Whether you have questions, want to volunteer, adopt, or simply
-        support our mission — feel free to reach out.
+        We&#39;d love to hear from you! Whether you have questions, want to
+        volunteer, adopt, or simply support our mission — feel free to reach
+        out.
       </p>
 
       <h2 className={classes.subheading}>Phone</h2>

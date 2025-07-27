@@ -3,6 +3,21 @@ import { notFound } from "next/navigation";
 import classes from "./page.module.css";
 import { getAnimalBySlug } from "@/lib/getAnimalsBySlug";
 
+// dynamic metadata for slugs
+export async function generateMetadata({ params }) {
+  const slug = params.slug;
+  const animal = getAnimalBySlug(slug);
+
+  if (!animal) {
+    notFound();
+  }
+
+  return {
+    title: animal.name,
+    description: animal.description,
+  };
+}
+
 export default async function AnimalDetailsPage({ params }) {
   const { slug } = params;
 
