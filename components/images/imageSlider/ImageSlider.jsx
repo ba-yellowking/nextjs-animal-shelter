@@ -25,14 +25,13 @@ export default function ImageSlider() {
   }, []);
 
   return (
-    <div className={classes.imageSlider}>
+    <div className={classes.slider}>
       {images.map((image, index) => (
         <Image
           key={index}
           src={image.image}
           className={`${classes.image} ${index === currentImageIndex ? classes.active : ""}`}
           alt={image.alt}
-          fill
         />
       ))}
     </div>

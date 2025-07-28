@@ -1,5 +1,10 @@
 .section {
-    width: 1200px;
-    height: 580px;
+    max-width: 1200px;
+    width: 100%;
     margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.test {
+    height: 500px;
 }

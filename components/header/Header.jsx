@@ -5,28 +5,42 @@ import logo from "@/assets/logo.png"; // '@/assets/logo.png' если alias на
 import ActiveLink from "../../ui/active-link/ActiveLink";
 
 export default function Header() {
-
   return (
-    <header className={classes.outer}>
-      <div className={classes.container}>
-
+    <header className={classes.header}>
+      <div className={classes.content}>
         <div className={classes.left}>
           <Link href="/" className={classes.logo}>
-            <Image src={logo} alt="Animal Shelter Logo" width={50} height={50} priority />
+            <Image
+              src={logo}
+              alt="Animal Shelter Logo"
+              width={50}
+              height={50}
+              priority
+            />
           </Link>
 
-          <nav className={classes.nav}>
+          <nav className={classes.about}>
             <ActiveLink href="/about">About us</ActiveLink>
+          </nav>
+          <nav className={classes.contacts}>
             <ActiveLink href="/contacts">Contacts</ActiveLink>
           </nav>
         </div>
 
+        <div className={classes.middle}>
+          <div>How it works?</div>
+          <div>How can I help?</div>
+        </div>
+
         <div className={classes.right}>
-          <Link href="/donate" className={classes.donateBtn}>
+          <Link href="/animals" className={classes.button}>
+            See animals
+          </Link>
+
+          <Link href="/donate" className={classes.button}>
             Donate
           </Link>
         </div>
-
       </div>
     </header>
   );

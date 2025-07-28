@@ -9,7 +9,7 @@ export default function HomePage() {
       </section>
 
       <section className={classes.section}>
-        <h2>Adoption Process</h2>
+        <h2 className={classes.test}>Adoption Process</h2>
         <p>Step-by-step how it works...</p>
       </section>
     </>
