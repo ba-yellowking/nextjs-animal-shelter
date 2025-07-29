@@ -10,26 +10,27 @@ export default function Header() {
       <div className={classes.content}>
         <div className={classes.left}>
           <Link href="/" className={classes.logo}>
-            <Image
-              src={logo}
-              alt="Animal Shelter Logo"
-              width={50}
-              height={50}
-              priority
-            />
+            {/*<Image*/}
+            {/*  src={logo}*/}
+            {/*  alt="Animal Shelter Logo"*/}
+            {/*  width={50}*/}
+            {/*  height={50}*/}
+            {/*  priority*/}
+            {/*/>*/}
+            <p className={classes.textLogo}>ANIMAL SHELTER</p>
           </Link>
 
           <nav className={classes.about}>
             <ActiveLink href="/about">About us</ActiveLink>
           </nav>
-          <nav className={classes.contacts}>
-            <ActiveLink href="/contacts">Contacts</ActiveLink>
-          </nav>
+          {/*<nav className={classes.contacts}>*/}
+          {/*  <ActiveLink href="/contacts">Contacts</ActiveLink>*/}
+          {/*</nav>*/}
         </div>
 
-        <div className={classes.middle}>
-          <div>How it works?</div>
-          <div>How can I help?</div>
+        <div className={classes.contacts}>
+          <div>How to adopt?</div>
+          <div>How Can I Help?</div>
         </div>
 
         <div className={classes.right}>
