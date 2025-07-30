@@ -6,13 +6,6 @@
     background-color: #465C86;
     border-bottom: 1px solid #f6f6f6;
     font-size: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.iconText {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ffffff;
 }
 
 .content {
@@ -23,71 +16,54 @@
     align-items: center;
 }
 
+.logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.logo:hover {
+    color: #F2C29B;
+}
+
+.pawTrace {
+    position: absolute;
+    left: 130px;
+    top: 0;
+    color: #ffffff;
+}
+.logo:hover .pawTrace {
+    color: #F2C29B;
+}
+
 .navigation {
     font-weight: 700;
     color: #ffffff;
-}
-.about:hover, .contacts:hover {
-    color: #c17b27;
-}
-
-.left {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 32px;
 }
 
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-}
-
-/*.icon {*/
-/*    font-weight: bold;*/
-/*    font-size: 24px;*/
-/*    color: #222;*/
-/*    text-decoration: none;*/
-/*}*/
-
-.right {
-    position: relative;
+.adoption {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/*.button {*/
-/*    background-color: #58b2f6;*/
-/*    color: white;*/
-/*    padding: 8px 16px;*/
-/*    border-radius: 8px;*/
-/*    text-decoration: none;*/
-/*    font-weight: 500;*/
-/*    transition: background-color 0.3s ease;*/
-/*}*/
-
-/*.button:hover {*/
-/*    background-color: #4791ca;*/
-/*}*/
-
 .cta {
+    position: relative;
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
     text-align: end;
 }
-
-.pawTrace {
-    position: absolute;
-    left: 263px;
-    top: 15px;
-    color: #ffffff;
-}
-.pawTrace:hover {
-    color: red;
+.cta:hover {
+    color: #F2C29B;
 }
 
 .click {
@@ -97,6 +73,6 @@
     transform: rotate(90deg);
     color: #ffffff;
 }
-.click:hover {
-    color: red;
+.cta:hover .click {
+    color: #F2C29B;
 }
