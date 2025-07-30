@@ -1,6 +1,5 @@
 .header {
     width: 100vw;
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +9,7 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.textLogo {
+.iconText {
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
@@ -18,13 +17,13 @@
 
 .content {
     width: 1200px;
-    height: 60px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.about, .contacts {
+.navigation {
     font-weight: 700;
     color: #ffffff;
 }
@@ -34,39 +33,70 @@
 
 .left {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 32px;
 }
 
-/*.logo {*/
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+/*.icon {*/
 /*    font-weight: bold;*/
 /*    font-size: 24px;*/
 /*    color: #222;*/
 /*    text-decoration: none;*/
 /*}*/
 
-.middle {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
-
 .right {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.button {
-    background-color: #58b2f6;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+/*.button {*/
+/*    background-color: #58b2f6;*/
+/*    color: white;*/
+/*    padding: 8px 16px;*/
+/*    border-radius: 8px;*/
+/*    text-decoration: none;*/
+/*    font-weight: 500;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.button:hover {*/
+/*    background-color: #4791ca;*/
+/*}*/
+
+.cta {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: end;
 }
 
-.button:hover {
-    background-color: #4791ca;
+.pawTrace {
+    position: absolute;
+    left: 263px;
+    top: 15px;
+    color: #ffffff;
+}
+.pawTrace:hover {
+    color: red;
+}
+
+.click {
+    position: absolute;
+    left: -15px;
+    top: 0;
+    transform: rotate(90deg);
+    color: #ffffff;
+}
+.click:hover {
+    color: red;
 }
