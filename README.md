@@ -23,7 +23,7 @@ This is a web-based application built with **Next.js** (using both client and se
 
 ## Planned Improvements
 
-- **Adoption Request Submission** - Submitted data about users willing to adopt a pet, stored on the server.
+- **AdoptionDetailsTwo Request Submission** - Submitted data about users willing to adopt a pet, stored on the server.
 - **Donation Option** - API to be determined.
 - **Admin Panel** - Admin login & authorization to add, edit, delete animal cards
 - **Server-side Internationalization** - Implement locale-based routing using server components (next-intl)
