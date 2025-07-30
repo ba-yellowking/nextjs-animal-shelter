@@ -1,11 +1,8 @@
 .section {
+    min-width: 320px;
     max-width: 1200px;
     width: 100%;
     margin: 30px auto;
     box-sizing: border-box;
     background-color: #F9F9F9;
-}
-
-.test {
-    height: 500px;
 }

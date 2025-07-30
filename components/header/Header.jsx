@@ -1,6 +1,5 @@
 import classes from "./Header.module.css";
 import Link from "next/link";
-import ActiveLink from "../../ui/active-link/ActiveLink";
 
 export default function Header() {
   return (
@@ -29,7 +28,7 @@ export default function Header() {
         </Link>
 
         <div className={classes.navigation}>
-          <ActiveLink href="/about">About us</ActiveLink>
+          <a href="#about">About us</a>
           <a>How to adopt?</a>
           <a>How Can I Help?</a>
         </div>

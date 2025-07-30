@@ -1,5 +1,6 @@
 import Banner from "@/components/banner/Banner";
 import classes from "./page.module.css";
+import About from "@/components/about/About";
 
 export default function HomePage() {
   return (
@@ -8,9 +9,8 @@ export default function HomePage() {
         <Banner />
       </section>
 
-      <section className={classes.section}>
-        <h2 className={classes.test}>Adoption Process</h2>
-        <p>Step-by-step how it works...</p>
+      <section id="about" className={classes.section}>
+        <About />
       </section>
     </>
   );

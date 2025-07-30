@@ -1,15 +1,15 @@
 "use client";
 
 import classes from "./ImageSlider.module.css";
-import dog1 from "@/assets/dog1.jpg";
-import dog2 from "@/assets/dog2.jpg";
+import ani1 from "@/assets/1.jpg";
+import ani2 from "@/assets/2.jpg";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function ImageSlider() {
   const images = [
-    { image: dog1, alt: "Max" },
-    { image: dog2, alt: "Luna" },
+    { image: ani1, alt: "1" },
+    { image: ani2, alt: "2" },
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -32,6 +32,7 @@ export default function ImageSlider() {
           src={image.image}
           className={`${classes.image} ${index === currentImageIndex ? classes.active : ""}`}
           alt={image.alt}
+          fill
         />
       ))}
     </div>
