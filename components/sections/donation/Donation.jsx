@@ -1,10 +1,11 @@
 import classes from "./Donation.module.css";
 import volunteer from "@/assets/volunteer.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Donation() {
   return (
-    <main className={classes.about}>
+    <main className={classes.donation}>
       <div className={classes.content}>
         <div className={classes.text}>
           <h1 className={classes.heading}>How Can I Help?</h1>
@@ -44,12 +45,26 @@ export default function Donation() {
                     d="M4 28C4 14.745 14.745 4 28 4s24 10.745 24 24s-10.745 24-24 24S4 41.255 4 28m24.573 1.744c2.974.732 3.865 1.702 3.865 3.34c0 1.702-1.145 2.99-3.865 3.197zm-1.797-3.673c-2.544-.637-3.499-1.702-3.499-3.15s1.209-2.767 3.5-3.053zm1.797.429v-6.632c2.036.254 3.467 1.415 3.674 3.42h3.308c-.127-3.61-3.006-5.996-6.982-6.315v-2.687h-1.797v2.687c-4.008.303-6.87 2.656-6.87 6.219c0 3.228 2.179 5.042 6.218 5.98l.652.159v6.934c-2.56-.27-3.769-1.638-4.055-3.499h-3.292c.11 3.817 3.308 6.091 7.347 6.394v2.671h1.797V39.16c4.056-.287 7.237-2.497 7.237-6.394c0-3.387-2.29-5.105-6.473-6.075z"
                   />
                 </svg>
-                <h2>Donate</h2>
+                <h2>Charity</h2>
               </div>
               <p>
                 Every contribution helps us cover food, medical care, and
                 shelter expenses
               </p>
+              <Link href="/donate" className={classes.cta}>
+                Donate
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"
+                  />
+                </svg>
+              </Link>
             </div>
 
             <div className={classes.subparagraph}>
@@ -71,10 +86,8 @@ export default function Donation() {
                 Support a specific pet’s needs while they wait for their forever
                 home
               </p>
-            </div>
-
-            <div className={classes.subparagraph}>
-              <div className={classes.subheading}>
+              <Link href="/animals" className={classes.cta}>
+                Find your favorite
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -83,16 +96,10 @@ export default function Donation() {
                 >
                   <path
                     fill="currentColor"
-                    d="M17.5 3.25a2.75 2.75 0 1 1-1.451 5.086a1 1 0 0 1-.089.052l-6.713 3.48a3 3 0 0 1 0 .264l.013.008l6.416 3.802a2.75 2.75 0 1 1-.912 1.784L8.42 13.968a2.75 2.75 0 1 1 .008-3.928l6.415-3.326A2.75 2.75 0 0 1 17.5 3.25"
+                    d="M6 6v2h8.59L5 17.59L6.41 19L16 9.41V18h2V6z"
                   />
                 </svg>
-                <h2>Share and spread the word</h2>
-              </div>
-
-              <p>
-                Follow us on social media and share our posts to help more pets
-                get noticed
-              </p>
+              </Link>
             </div>
           </div>
         </div>

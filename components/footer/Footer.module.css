@@ -1,15 +1,18 @@
 .footer {
     width: 100%;
+    min-width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    background-color: #eaeaea;
+    background-color: #465C86;
+    color: #FFFFFF;
 }
 
 .content {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     height: 300px;
     display: flex;
     justify-content: space-between;
@@ -28,11 +31,121 @@
     gap: 7px;
 }
 
+.column h3 {
+    margin-bottom: 15px;
+}
+.column a {
+    padding: 2px 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+.column p {
+    padding: 2px 0;
+    font-size: 14px;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.schedule {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.days {
+    width: 40%;
+}
+.hours {
+    width: 60%;
+}
+
 .developer {
     width: 100%;
-    height: 50px;
+    min-width: 320px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #cfcfcf;
+    background-color: #2e3d59;
+}
+.powered {
+    width: 1200px;
+    height: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+}
+
+.powered p {
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .content {
+        height: 200px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .column {
+        width: 45%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .dogs,
+    .cats {
+        display: none;
+    }
+
+    .schedule {
+        display: flex;
+    }
+
+    .days, .hours {
+        width: 100%;
+    }
+
+    .days p, .hours p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .powered {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .powered {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .powered p {
+        font-size: 13px;
+    }
 }

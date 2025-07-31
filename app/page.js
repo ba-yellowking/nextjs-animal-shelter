@@ -4,6 +4,7 @@ import About from "@/components/sections/about/About";
 import AdoptionDetailsOne from "@/components/sections/adoption/one/AdoptionDetailsOne";
 import AdoptionDetailsTwo from "@/components/sections/adoption/two/AdoptionDetailsTwo";
 import Donation from "@/components/sections/donation/Donation";
+import Faq from "@/components/sections/adoption/faq/Faq";
 
 export default function HomePage() {
   return (
@@ -20,12 +21,16 @@ export default function HomePage() {
         <AdoptionDetailsOne />
       </section>
 
-      <section className={classes.section}>
+      <section id="donation" className={classes.section}>
         <AdoptionDetailsTwo />
       </section>
 
       <section className={classes.section}>
         <Donation />
+      </section>
+
+      <section id="faq" className={classes.section}>
+        <Faq />
       </section>
     </>
   );

@@ -1,4 +1,4 @@
-.about {
+.donation {
     display: flex;
 }
 
@@ -43,6 +43,15 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.cta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    text-decoration: underline;
+    color: #465C86;
 }
 
 .image {

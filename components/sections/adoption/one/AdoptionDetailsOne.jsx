@@ -10,8 +10,12 @@ export default function AdoptionDetailsOne() {
         <div className={classes.image}>
           <Image src={adoption} alt="Image of a building" fill />
         </div>
+
         <div className={classes.text}>
-          <h1 className={classes.heading}>Hot to adopt a pet?</h1>
+          <div className={classes.title}>
+            <h1 className={classes.heading}>Hot to adopt a pet?</h1>
+          </div>
+
           <div className={classes.paragraph}>
             <div className={classes.subheading}>
               <svg

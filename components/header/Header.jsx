@@ -30,7 +30,8 @@ export default function Header() {
         <div className={classes.navigation}>
           <a href="#about">About us</a>
           <a href="#adoption">How to adopt?</a>
-          <a>How Can I Help?</a>
+          <a href="#donation">How Can I Help?</a>
+          <a href="#faq">FAQ</a>
         </div>
 
         <div className={classes.adoption}>

@@ -10,7 +10,8 @@
 }
 
 .content {
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -124,7 +125,7 @@
 
     .navigation {
         gap: 24px;
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .cta {
@@ -145,7 +146,7 @@
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .pawTrace, .click {
@@ -157,12 +158,13 @@
     }
 
     .navigation {
+        padding: 15px;
         gap: 16px;
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .cta {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .click {

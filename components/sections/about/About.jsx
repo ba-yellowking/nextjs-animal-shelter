@@ -7,7 +7,10 @@ export default function About() {
     <main className={classes.about}>
       <div className={classes.content}>
         <div className={classes.text}>
-          <h1 className={classes.heading}>About Us</h1>
+          <div className={classes.title}>
+            <h1 className={classes.heading}>About Animal Shelter</h1>
+          </div>
+
           <div className={classes.paragraph}>
             <div className={classes.subparagraph}>
               <div className={classes.icon}>

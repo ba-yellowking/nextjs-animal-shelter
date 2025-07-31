@@ -11,7 +11,9 @@ export default function AdoptionDetailsTwo() {
           <Image src={adoption} alt="Image of a building" fill />
         </div>
         <div className={classes.text}>
-          <h1 className={classes.heading}>What's Next?</h1>
+          <div className={classes.title}>
+            <h1 className={classes.heading}>What's Next?</h1>
+          </div>
           <div className={classes.paragraph}>
             <div className={classes.subheading}>
               <svg
