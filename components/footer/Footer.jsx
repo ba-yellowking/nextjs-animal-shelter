@@ -88,7 +88,10 @@ export default function Footer() {
       </div>
       <div className={classes.developer}>
         <div className={classes.powered}>
-          <p>Powered by: https://github.com/ba-yellowking</p>
+          <p>Powered by: </p>
+          <a href="https://github.com/ba-yellowking">
+            https://github.com/ba-yellowking
+          </a>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"

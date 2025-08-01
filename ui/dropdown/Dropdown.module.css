@@ -1,0 +1,30 @@
+.dropdown {
+    position: relative;
+    width: 100%;
+    color: #555;
+}
+
+.toggle {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    z-index: 10;
+    padding: 20px 10px;
+    color: #333;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+.open {
+    transform: rotateX(180deg);
+}

@@ -87,6 +87,9 @@
 .powered p {
     font-size: 14px;
 }
+.powered a {
+    font-size: 14px;
+}
 
 @media (max-width: 900px) {
     .content {
