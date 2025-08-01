@@ -1,7 +1,7 @@
 "use client";
 // client component to visually highlight active links
 
-import classes from "@/ui/active-link/ActiveLink.module.css";
+import classes from "@/archive/active-link/ActiveLink.module.css";
 import Link from "next/link";
 import { usePathname as pathname } from "next/navigation";
 
