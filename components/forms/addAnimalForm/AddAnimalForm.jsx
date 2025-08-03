@@ -15,7 +15,7 @@ export default function AddAnimalForm() {
     <>
       {/*setting server action*/}
       <form className={classes.form} action={formAction}>
-        <div className={classes.formRow}>
+        <div className={classes.field}>
           <label htmlFor="name">Name</label>
           <input
             id="name"
@@ -26,7 +26,7 @@ export default function AddAnimalForm() {
           />
         </div>
 
-        <div className={classes.formRow}>
+        <div className={classes.field}>
           <label htmlFor="species">Species</label>
           <select
             id="species"
@@ -40,17 +40,17 @@ export default function AddAnimalForm() {
           </select>
         </div>
 
-        <div className={classes.formRow}>
+        <div className={classes.field}>
           <label htmlFor="age">Age</label>
           <input id="age" name="age" type="number" min="0" placeholder="Age" />
         </div>
 
-        <div className={classes.formRow}>
+        <div className={classes.field}>
           <label htmlFor="color">Color</label>
           <input id="color" name="color" placeholder="Color" required />
         </div>
 
-        <div className={classes.formRow}>
+        <div className={classes.field}>
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
@@ -61,8 +61,8 @@ export default function AddAnimalForm() {
 
         <ImagePicker label="Your image" name="image" />
         {state.message && <p>{state.message}</p>}
-        <div className={classes.buttonGroup}>
-          <SubmitPending />
+        <div className={classes.pending}>
+          <SubmitPending text={"Add a friend"} />
         </div>
 
         {/*{status && <p className={classes.status}>{status}</p>}*/}

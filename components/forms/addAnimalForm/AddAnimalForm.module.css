@@ -9,13 +9,13 @@
     max-width: 600px;
 }
 
-.formRow {
+.field {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
 }
 
-.formRow label {
+.field label {
     flex: 0 0 100px;
     font-weight: 600;
     font-size: 0.875rem;
@@ -23,9 +23,9 @@
     margin-top: 0.4rem;
 }
 
-.formRow input,
-.formRow select,
-.formRow textarea {
+.field input,
+.field select,
+.field textarea {
     flex: 1;
     padding: 0.4rem 0.65rem;
     border: 1px solid #ccc;
@@ -35,15 +35,15 @@
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.formRow textarea {
+.field textarea {
     resize: vertical;
     min-height: 60px;
     max-height: 100px;
 }
 
-.formRow input:focus,
-.formRow select:focus,
-.formRow textarea:focus {
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
     border-color: #0070f3;
     box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
     outline: none;
@@ -71,28 +71,11 @@
     border: 1px solid #ccc;
 }
 
-.buttonGroup {
+.pending {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     margin-top: 0.5rem;
-}
-
-.submitBtn {
-    flex: 1;
-    padding: 0.5rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: white;
-    background-color: #0070f3;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.submitBtn:hover {
-    background-color: #0059c9;
 }
 
 .status {

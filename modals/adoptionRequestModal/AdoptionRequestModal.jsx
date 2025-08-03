@@ -5,7 +5,7 @@ import Modal from "@/ui/modal/Modal";
 import AdoptionRequestForm from "@/app/animals/[slug]/adoptionRequestForm/AdoptionRequestForm";
 import classes from "./AdoptionRequestModal.module.css";
 
-export default function AdoptionRequestModal() {
+export default function AdoptionRequestModal({ animalId }) {
   const [isOpen, open, close] = useModal();
   return (
     <main>
@@ -14,7 +14,7 @@ export default function AdoptionRequestModal() {
       </button>
       {isOpen && (
         <Modal onClose={close}>
-          <AdoptionRequestForm />
+          <AdoptionRequestForm animalId={animalId} />
         </Modal>
       )}
     </main>

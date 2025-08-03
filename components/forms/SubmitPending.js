@@ -1,12 +1,12 @@
 import { useFormStatus } from "react-dom";
-import classes from "./addAnimalForm/AddAnimalForm.module.css";
+import classes from "./SubmitPending.module.css";
 
-export default function SubmitPending() {
+export default function SubmitPending({ text }) {
   const { pending } = useFormStatus();
 
   return (
-    <button disabled={pending} className={classes.submitBtn}>
-      {pending ? "Submitting..." : "Add a friend"}
+    <button disabled={pending} className={classes.submit}>
+      {pending ? "Submitting..." : text}
     </button>
   );
 }
