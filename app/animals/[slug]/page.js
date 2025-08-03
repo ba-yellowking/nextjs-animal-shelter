@@ -31,8 +31,8 @@ export default async function AnimalDetailsPage({ params }) {
 
   return (
     <main className={classes.card}>
-      <div className={classes.visualInfo}>
-        <div className={classes.image}>
+      <div className={classes.image}>
+        <div className={classes.animal}>
           {animal.image && (
             <Image
               src={animal.image}
@@ -45,12 +45,20 @@ export default async function AnimalDetailsPage({ params }) {
         <AdoptionRequestModal />
       </div>
 
-      <div className={classes.info}>
+      <div className={classes.details}>
         <h1>{animal.name}</h1>
-        <p>Age: {animal.age}</p>
-        <p>Species: {animal.species}</p>
-        <p>Color: {animal.color}</p>
-        <p>More information: {animal.description}</p>
+        <p>
+          <strong>Age:</strong> {animal.age}
+        </p>
+        <p>
+          <strong>Species:</strong> {animal.species}
+        </p>
+        <p>
+          <strong>Color:</strong> {animal.color}
+        </p>
+        <p>
+          <strong>Other:</strong> {animal.description}
+        </p>
       </div>
     </main>
   );
