@@ -1,0 +1,45 @@
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    background-color: #F9F9F9;
+    transition: color 0.4s ease;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #465C86;
+    z-index: 0;
+    transition: width 0.4s ease;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.button:hover {
+    color: #ffffff;
+}
+
+.button {
+    z-index: 1;
+}
+
+.button::before {
+    z-index: 0;
+}
+
+.button span {
+    position: relative;
+    z-index: 2;
+}

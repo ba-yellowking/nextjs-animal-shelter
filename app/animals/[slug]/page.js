@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import classes from "./page.module.css";
 import { getAnimalBySlug } from "@/lib/getAnimalsBySlug";
+import AdoptionRequestModal from "@/modals/adoptionRequestModal/AdoptionRequestModal";
 
 // dynamic metadata for slugs
 export async function generateMetadata({ params }) {
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: animal.name,
+    title: `${animal.name} - Animal Shelter`,
     description: animal.description,
   };
 }
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }) {
 export default async function AnimalDetailsPage({ params }) {
   const { slug } = params;
 
-  // fetching information by slug
+  // server action - fetching information by slug
   const animal = getAnimalBySlug(slug);
 
   if (!animal) {
@@ -30,16 +31,19 @@ export default async function AnimalDetailsPage({ params }) {
 
   return (
     <main className={classes.card}>
-      {animal.image && (
+      <div className={classes.visualInfo}>
         <div className={classes.image}>
-          <Image
-            src={animal.image}
-            alt={animal.name}
-            fill
-            style={{ objectFit: "cover" }}
-          />
+          {animal.image && (
+            <Image
+              src={animal.image}
+              alt={animal.name}
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          )}
         </div>
-      )}
+        <AdoptionRequestModal />
+      </div>
 
       <div className={classes.info}>
         <h1>{animal.name}</h1>

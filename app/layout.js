@@ -1,6 +1,9 @@
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import { initDb } from "@/lib/initDb";
+
+initDb();
 
 export const metadata = {
   title: "Animal Shelter",

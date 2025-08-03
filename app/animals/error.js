@@ -1,10 +1,12 @@
 "use client";
 
+import classes from "./page.module.css";
+
 export default function Error() {
   return (
-    <main>
-      <h1>An error occurred!</h1>
-      <p>Failed to fetch data. Try again later</p>
-    </main>
-  )
+    <div className={classes.container}>
+      <h1 className={classes.code}>Error</h1>
+      <p className={classes.message}>Failed to fetch data. Try again later.</p>
+    </div>
+  );
 }

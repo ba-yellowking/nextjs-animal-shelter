@@ -20,7 +20,7 @@ export default function Contacts() {
       <h2 className={classes.subheading}>Location</h2>
       <p className={classes.paragraph}>
         Astana, Kazakhstan <br />
-        Open Monday to Saturday, 10:00 AM – 6:00 PM
+        Mangilik El Avenue, 45
       </p>
 
       <h2 className={classes.subheading}>Social Media</h2>
