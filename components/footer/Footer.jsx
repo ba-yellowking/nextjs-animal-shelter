@@ -56,9 +56,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={classes.column}>
+        <div className={`${classes.schedule} ${classes.column}`}>
           <h3>Opening Hours</h3>
-          <div className={classes.schedule}>
+          <div className={classes.work}>
             <div className={classes.days}>
               <p>Mon - Fri</p>
               <p>Sat - Sun</p>
