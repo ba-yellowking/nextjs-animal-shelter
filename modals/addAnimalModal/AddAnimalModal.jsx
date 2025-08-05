@@ -16,7 +16,6 @@ function AddAnimalModal() {
 
       {isOpen && (
         <Modal onClose={close}>
-          <h3>Add new animal</h3>
           <AddAnimalForm />
         </Modal>
       )}

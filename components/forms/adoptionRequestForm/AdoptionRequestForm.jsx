@@ -16,22 +16,45 @@ export default function AdoptionRequestForm({ animalId }) {
 
         <div className={classes.field}>
           <label htmlFor="fullName">Full name</label>
-          <input name="fullName" id="fullName" type="text" required />
+          <input
+            className={classes.inputForm}
+            name="fullName"
+            id="fullName"
+            type="text"
+            required
+          />
         </div>
 
         <div className={classes.field}>
           <label htmlFor="birth">Date of birth</label>
-          <input name="birth" id="birth" type="date" required />
+          <input
+            className={classes.inputForm}
+            name="birth"
+            id="birth"
+            type="date"
+            required
+          />
         </div>
 
         <div className={classes.field}>
           <label htmlFor="phone">Phone number</label>
-          <input name="phone" id="phone" type="tel" required />
+          <input
+            className={classes.inputForm}
+            name="phone"
+            id="phone"
+            type="tel"
+            required
+          />
         </div>
 
         <div className={classes.field}>
           <label htmlFor="comment">Comment</label>
-          <textarea name="comment" id="comment" rows="4" />
+          <textarea
+            className={classes.textAreaForm}
+            name="comment"
+            id="comment"
+            rows="4"
+          />
         </div>
 
         <div className={classes.pending}>

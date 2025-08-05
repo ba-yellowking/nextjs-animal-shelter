@@ -15,7 +15,7 @@
     font-size: 0.95rem;
     font-weight: 600;
     color: white;
-    background-color: #0070f3;
+    background-color: #888888;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -24,7 +24,7 @@
 
 .picker .button:hover,
 .picker .button:focus {
-    background-color: #0059c9;
+    background-color: #465C86;
 }
 
 .preview {

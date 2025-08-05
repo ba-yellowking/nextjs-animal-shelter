@@ -12,61 +12,78 @@ export default function AddAnimalForm() {
   });
 
   return (
-    <>
-      {/*setting server action*/}
+    <div className={classes.wrapper}>
+      <h2 className={classes.title}>Add a New Animal</h2>
+      {/*server action*/}
       <form className={classes.form} action={formAction}>
         <div className={classes.field}>
           <label htmlFor="name">Name</label>
           <input
+            className={classes.inputForm}
             id="name"
             name="name"
-            // value={forms.name}
             placeholder="Name"
             required
           />
         </div>
 
-        <div className={classes.field}>
-          <label htmlFor="species">Species</label>
-          <select
-            id="species"
-            name="species"
-            // value={forms.species}
-            required
-          >
-            <option value="">Select species</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-          </select>
-        </div>
+        <div className={classes.fieldRow}>
+          <div>
+            <label htmlFor="species">Species</label>
+            <select
+              className={classes.inputForm}
+              id="species"
+              name="species"
+              required
+            >
+              <option value="">Select</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+            </select>
+          </div>
 
-        <div className={classes.field}>
-          <label htmlFor="age">Age</label>
-          <input id="age" name="age" type="number" min="0" placeholder="Age" />
-        </div>
+          <div>
+            <label htmlFor="color">Color</label>
+            <input
+              className={classes.inputForm}
+              id="color"
+              name="color"
+              placeholder="Color"
+              required
+            />
+          </div>
 
-        <div className={classes.field}>
-          <label htmlFor="color">Color</label>
-          <input id="color" name="color" placeholder="Color" required />
+          <div>
+            <label htmlFor="age">Age</label>
+            <input
+              className={`${classes.inputForm} ${classes.ageForm}`}
+              id="age"
+              name="age"
+              type="number"
+              min="0"
+              placeholder="Age"
+            />
+          </div>
         </div>
 
         <div className={classes.field}>
           <label htmlFor="description">Description</label>
           <textarea
+            className={classes.textAreaForm}
             id="description"
             name="description"
             placeholder="Description"
           />
         </div>
 
-        <ImagePicker label="Your image" name="image" />
-        {state.message && <p>{state.message}</p>}
+        <ImagePicker name="image" />
+
+        {state.message && <p className={classes.status}>{state.message}</p>}
+
         <div className={classes.pending}>
           <SubmitPending text={"Add a friend"} />
         </div>
-
-        {/*{status && <p className={classes.status}>{status}</p>}*/}
       </form>
-    </>
+    </div>
   );
 }

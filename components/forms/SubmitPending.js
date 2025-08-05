@@ -1,3 +1,5 @@
+// submit button is disabled until data is delivered
+
 import { useFormStatus } from "react-dom";
 import classes from "./SubmitPending.module.css";
 

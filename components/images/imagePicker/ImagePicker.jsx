@@ -50,10 +50,11 @@ export default function ImagePicker({ label, name }) {
           accept="image/png, image/jpeg"
           required
         />
+
+        <button type="button" className={classes.button} onClick={clickHandler}>
+          Select an Image
+        </button>
       </div>
-      <button type="button" className={classes.button} onClick={clickHandler}>
-        Select an Image
-      </button>
     </div>
   );
 }

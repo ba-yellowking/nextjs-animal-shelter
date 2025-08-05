@@ -1,15 +1,16 @@
 .submit {
-    flex: 1;
+    width: 140px;
+    height: 40px;
     padding: 0.5rem;
     font-size: 0.95rem;
     font-weight: 600;
     color: white;
-    background-color: #0070f3;
+    background-color: #888888;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 .submit:hover {
-    background-color: #0059c9;
+    background-color: #465C86;
 }

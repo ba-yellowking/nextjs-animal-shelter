@@ -2,7 +2,7 @@
 
 import useModal from "@/hooks/useModal";
 import Modal from "@/ui/modal/Modal";
-import AdoptionRequestForm from "@/app/animals/[slug]/adoptionRequestForm/AdoptionRequestForm";
+import AdoptionRequestForm from "@/components/forms/adoptionRequestForm/AdoptionRequestForm";
 import classes from "./AdoptionRequestModal.module.css";
 
 export default function AdoptionRequestModal({ animalId }) {

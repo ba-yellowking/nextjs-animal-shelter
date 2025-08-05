@@ -3,7 +3,7 @@
     background-color: #fefefe;
     border-radius: 4px;
     min-width: 400px;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
@@ -25,43 +25,24 @@
 .field {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 }
 .field label {
     padding: 10px 0;
 }
 
 .inputForm {
-    width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
     box-sizing: border-box;
-    height: 42px;
-}
-.inputForm:focus {
-    border-color: #465C86;
 }
 
-.fieldRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-.fieldRow label {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 10px 0;
-}
-.fieldRow > div:nth-child(2),
-.fieldRow > div:nth-child(3) {
-    flex: 1;
+.inputForm:focus {
+    border-color: #465C86;
 }
 
 .textAreaForm {
@@ -73,22 +54,17 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
     max-width: 600px;
-    min-height: 60px;
+    min-height: 120px;
     resize: vertical;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+}
+
+.textAreaForm:focus {
+    border-color: #465C86;
 }
 
 .pending {
     display: flex;
     justify-content: end;
     align-items: center;
-}
-
-.status {
-    margin-top: 10px;
-    font-weight: 500;
-    font-size: 14px;
-    color: #28a745;
-    text-align: center;
 }
