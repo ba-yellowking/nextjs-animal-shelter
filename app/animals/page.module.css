@@ -1,14 +1,12 @@
 .animalsWrap {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+@media(max-width: 900px) {
+    .animalsWrap {
+
+    }
 }
