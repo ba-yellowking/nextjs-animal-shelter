@@ -41,3 +41,9 @@
 .image img {
     object-fit: cover;
 }
+
+@media(max-width: 600px) {
+    .animalCard {
+        min-width: 240px;
+    }
+}

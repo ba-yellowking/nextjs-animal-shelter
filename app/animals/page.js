@@ -14,9 +14,9 @@ export default function Animals() {
 
   return (
     <>
-      {/*<div className={classes.container}>*/}
-      {/*  <AddAnimalModal />*/}
-      {/*</div>*/}
+      <div className={classes.container}>
+        <AddAnimalModal />
+      </div>
 
       <div className={classes.animalsWrap}>
         <Suspense fallback={<p>Loading...</p>}>
