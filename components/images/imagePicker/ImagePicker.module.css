@@ -15,27 +15,26 @@
     font-size: 0.95rem;
     font-weight: 600;
     color: white;
-    background-color: #888888;
+    background-color: #C3CACE;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-.picker .button:hover,
-.picker .button:focus {
-    background-color: #465C86;
+.picker .button:hover {
+    background-color: #2B3134;
 }
 
 .preview {
     width: 10rem;
     height: 10rem;
-    border: 2px solid #a4abb9;
+    border: 2px solid #F9F9F9;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #a4abb9;
+    color: #333;
     position: relative;
 }
 

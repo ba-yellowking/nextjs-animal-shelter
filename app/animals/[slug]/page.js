@@ -42,7 +42,6 @@ export default async function AnimalDetailsPage({ params }) {
             />
           )}
         </div>
-        <AdoptionRequestModal animalId={animal.id} />
       </div>
 
       <div className={classes.details}>
@@ -59,6 +58,8 @@ export default async function AnimalDetailsPage({ params }) {
         <p>
           <strong>Other:</strong> {animal.description}
         </p>
+
+        <AdoptionRequestModal animalId={animal.id} />
       </div>
     </main>
   );

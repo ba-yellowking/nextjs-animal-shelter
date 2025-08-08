@@ -1,10 +1,10 @@
 .header {
     width: 100%;
-    min-width: 320px;
+    min-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #465C86;
+    background-color: #8D9CA4;
     border-bottom: 1px solid #f6f6f6;
     font-size: 20px;
 }

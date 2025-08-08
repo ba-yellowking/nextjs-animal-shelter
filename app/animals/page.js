@@ -2,6 +2,7 @@ import classes from "./page.module.css";
 import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { Suspense } from "react";
 import AnimalList from "@/components/animals/list/AnimalList";
+import Notification from "@/app/animals/Notification";
 
 export const metadata = {
   title: "Animal list",
@@ -10,13 +11,15 @@ export const metadata = {
 
 export default function Animals() {
   // app/animals/error.js customed error message
-  // throw new Error()
+  // throw new Error();
 
   return (
     <>
-      <div className={classes.container}>
-        <AddAnimalModal />
-      </div>
+      {/*<div className={classes.container}>*/}
+      <AddAnimalModal />
+      {/*</div>*/}
+
+      <Notification />
 
       <div className={classes.animalsWrap}>
         <Suspense fallback={<p>Loading...</p>}>

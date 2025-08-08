@@ -36,5 +36,5 @@ export default async function SubmitAdoptionRequest(prevState, formData) {
     `,
   ).run(newRequest);
 
-  redirect("/animals");
+  redirect("/animals?success=1");
 }

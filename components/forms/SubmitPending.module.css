@@ -5,12 +5,12 @@
     font-size: 0.95rem;
     font-weight: 600;
     color: white;
-    background-color: #888888;
+    background-color: #C3CACE;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 .submit:hover {
-    background-color: #465C86;
+    background-color: #2B3134;
 }
