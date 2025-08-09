@@ -1,7 +1,7 @@
 "use client";
 
 import classes from "./page.module.css";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
@@ -23,17 +23,19 @@ export default function Notification() {
     }, 5_000);
 
     return () => clearTimeout(timer);
-  }, [searchParams]);
+  }, [router, searchParams]);
 
   return (
     <>
-      {isSuccess && (
-        <div>
-          <div className={classes.notification}>
-            <p>Adoption request submitted successfully!</p>
+      <Suspense fallback={<div>Loading...</div>}>
+        {isSuccess && (
+          <div>
+            <div className={classes.notification}>
+              <p>Adoption request submitted successfully!</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </Suspense>
     </>
   );
 }

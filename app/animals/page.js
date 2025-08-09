@@ -19,7 +19,9 @@ export default function Animals() {
       <AddAnimalModal />
       {/*</div>*/}
 
-      <Notification />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Notification />
+      </Suspense>
 
       <div className={classes.animalsWrap}>
         <Suspense fallback={<p>Loading...</p>}>
