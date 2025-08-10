@@ -26,6 +26,13 @@
     animation: fadeInOut 5s ease-in-out forwards;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;
