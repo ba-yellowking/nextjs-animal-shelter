@@ -25,16 +25,16 @@ export default function AdoptionRequestForm({ animalId }) {
           />
         </div>
 
-        <div className={classes.field}>
-          <label htmlFor="birth">Date of birth</label>
-          <input
-            className={classes.inputForm}
-            name="birth"
-            id="birth"
-            type="date"
-            required
-          />
-        </div>
+        {/*<div className={classes.field}>*/}
+        {/*  <label htmlFor="birth">Date of birth</label>*/}
+        {/*  <input*/}
+        {/*    className={classes.inputForm}*/}
+        {/*    name="birth"*/}
+        {/*    id="birth"*/}
+        {/*    type="date"*/}
+        {/*    required*/}
+        {/*  />*/}
+        {/*</div>*/}
 
         <div className={classes.field}>
           <label htmlFor="phone">Phone number</label>
@@ -43,6 +43,17 @@ export default function AdoptionRequestForm({ animalId }) {
             name="phone"
             id="phone"
             type="tel"
+            required
+          />
+        </div>
+
+        <div className={classes.field}>
+          <label htmlFor="phone">Email</label>
+          <input
+            className={classes.inputForm}
+            name="email"
+            id="email"
+            type="email"
             required
           />
         </div>

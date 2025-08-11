@@ -11,15 +11,17 @@ export default async function SubmitAdoptionRequest(prevState, formData) {
   const newRequest = {
     animalId: formData.get("animalId"),
     fullName: formData.get("fullName"),
-    birth: formData.get("birth"),
+    // birth: formData.get("birth"),
     phone: formData.get("phone"),
+    email: formData.get("email"),
     comment: formData.get("comment"),
   };
 
   if (
     isValidData(newRequest.fullName) ||
-    isValidData(newRequest.birth) ||
+    // isValidData(newRequest.birth) ||
     isValidData(newRequest.phone) ||
+    isValidData(newRequest.email) ||
     isValidData(newRequest.comment)
   ) {
     return {
@@ -31,8 +33,8 @@ export default async function SubmitAdoptionRequest(prevState, formData) {
 
   db.prepare(
     `
-      INSERT INTO adoption_requests (animalId, fullName, birth, phone, comment)
-      VALUES (@animalId, @fullName, @birth, @phone, @comment)
+      INSERT INTO adoption_requests (animalId, fullName, phone, email, comment)
+      VALUES (@animalId, @fullName, @phone, @email, @comment)
     `,
   ).run(newRequest);
 
