@@ -3,6 +3,7 @@ import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { Suspense } from "react";
 import AnimalList from "@/components/animals/list/AnimalList";
 import Notification from "@/app/animals/Notification";
+import AddUserModal from "@/modals/addUserModal/AddUserModal";
 
 export const metadata = {
   title: "Animal list",
@@ -18,6 +19,7 @@ export default function Animals() {
       {/*<div className={classes.container}>*/}
       <AddAnimalModal />
       {/*</div>*/}
+      <AddUserModal />
 
       <Suspense fallback={<p>Loading...</p>}>
         <Notification />
