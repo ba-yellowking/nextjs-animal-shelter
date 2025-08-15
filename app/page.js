@@ -1,4 +1,4 @@
-import Banner from "@/components/banner/Banner";
+import Banner from "@/components/sections/banner/Banner";
 import classes from "./page.module.css";
 import About from "@/components/sections/about/About";
 import AdoptionDetailsOne from "@/components/sections/adoption/one/AdoptionDetailsOne";

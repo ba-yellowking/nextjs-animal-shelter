@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { saveAnimal } from "@/lib/saveAnimal";
+import { saveAnimal } from "@/lib/animals/saveAnimal";
 import { revalidatePath } from "next/cache";
 
 export async function submitNewAnimal(prevState, formData) {

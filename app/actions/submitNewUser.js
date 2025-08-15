@@ -1,6 +1,6 @@
 "use server";
 
-import { addUser } from "@/lib/addUser";
+import { addUser } from "@/lib/users/addUser";
 import { revalidatePath } from "next/cache";
 
 export async function submitNewUser(prevState, formData) {

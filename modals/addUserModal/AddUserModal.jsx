@@ -10,7 +10,9 @@ export default function AddUserModal() {
 
   return (
     <main>
-      <button onClick={open}>Sign up</button>
+      <button onClick={open} className={classes.signUpBtn}>
+        Sign up
+      </button>
 
       {isOpen && (
         <Modal onClose={close}>

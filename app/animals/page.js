@@ -16,9 +16,7 @@ export default function Animals() {
 
   return (
     <>
-      {/*<div className={classes.container}>*/}
       <AddAnimalModal />
-      {/*</div>*/}
       <AddUserModal />
 
       <Suspense fallback={<p>Loading...</p>}>

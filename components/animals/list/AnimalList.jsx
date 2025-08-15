@@ -1,4 +1,4 @@
-import { getAnimals } from "@/lib/getAnimals";
+import { getAnimals } from "@/lib/animals/getAnimals";
 import AnimalCard from "@/components/animals/cards/AnimalCard";
 import classes from "./AnimalList.module.css";
 

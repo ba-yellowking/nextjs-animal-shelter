@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import classes from "./page.module.css";
-import { getAnimalBySlug } from "@/lib/getAnimalsBySlug";
+import { getAnimalBySlug } from "@/lib/animals/getAnimalsBySlug";
 import AdoptionRequestModal from "@/modals/adoptionRequestModal/AdoptionRequestModal";
 
 // dynamic metadata for slugs
