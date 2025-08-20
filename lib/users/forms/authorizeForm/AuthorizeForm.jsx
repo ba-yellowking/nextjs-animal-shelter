@@ -1,27 +1,19 @@
 "use client";
 
-import classes from "./AddUserForm.module.css";
+import classes from "./AuthorizeForm.module.css";
 import { useActionState } from "react";
-import { submitNewUser } from "@/app/actions/submitNewUser";
+import { SubmitAuthorization } from "@/lib/users/actions/submitAuthorization";
 
-export default function AddUserForm() {
-  const [state, formAction] = useActionState(submitNewUser, { message: null });
+export default function AuthorizeForm() {
+  const [state, formAction] = useActionState(SubmitAuthorization, {
+    message: null,
+  });
 
   return (
     <div className={classes.wrapper}>
-      <h2 className={classes.title}>Register a new shelter</h2>
-      <form className={classes.form} action={formAction}>
-        <div className={classes.field}>
-          <label htmlFor="username">Username</label>
-          <input
-            className={classes.inputForm}
-            id="username"
-            name="username"
-            placeholder="Username"
-            required
-          />
-        </div>
+      <h2 className={classes.title}>Sign in</h2>
 
+      <form className={classes.form} action={formAction}>
         <div className={classes.field}>
           <label htmlFor="email">Email</label>
           <input
@@ -45,11 +37,9 @@ export default function AddUserForm() {
           />
         </div>
 
-        {/*{state.message && <p className={classes.status}>{state.message}</p>}*/}
-
         <div className={classes.pending}>
           <button type="submit" className={classes.submitBtn}>
-            Sign up
+            Sign in
           </button>
         </div>
       </form>

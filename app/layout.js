@@ -2,6 +2,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { initDb } from "@/lib/initDb";
+import Link from "next/link";
 
 initDb();
 

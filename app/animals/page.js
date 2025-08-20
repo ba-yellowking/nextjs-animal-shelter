@@ -3,7 +3,7 @@ import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { Suspense } from "react";
 import AnimalList from "@/components/animals/list/AnimalList";
 import Notification from "@/app/animals/Notification";
-import AddUserModal from "@/modals/addUserModal/AddUserModal";
+import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
 
 export const metadata = {
   title: "Animal list",
@@ -17,7 +17,6 @@ export default function Animals() {
   return (
     <>
       <AddAnimalModal />
-      <AddUserModal />
 
       <Suspense fallback={<p>Loading...</p>}>
         <Notification />
