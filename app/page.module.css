@@ -8,7 +8,7 @@
 }
 
 /*not found -------------------------------- */
-.notFound {
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +49,7 @@
 }
 
 @media (max-width: 600px) {
-    .notFound {
+    .wrapper {
         min-height: 100%;
         min-width: 400px;
     }
@@ -62,30 +62,4 @@
         font-size: 18px;
         margin: 0.5rem 0;
     }
-}
-
-/*error ----------------------------------- */
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    padding: 1rem;
-    background-color: #f8f8f8;
-}
-
-.code {
-    font-size: 6rem;
-    font-weight: bold;
-    color: #465C86;
-    margin: 0;
-}
-
-.message {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #333;
 }

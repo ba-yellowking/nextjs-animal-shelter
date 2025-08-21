@@ -4,8 +4,8 @@ import { redirect } from "next/navigation";
 import { saveAnimal } from "@/lib/animals/saveAnimal";
 import { revalidatePath } from "next/cache";
 
+// server actions are async
 export async function submitNewAnimal(prevState, formData) {
-  // server action (async)
   // formData object collects data from inputs
 
   function isValidData(data) {

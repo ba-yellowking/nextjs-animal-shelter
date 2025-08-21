@@ -47,14 +47,14 @@
 }
 
 .navigation {
+    min-width: 400px;
     font-weight: 700;
     color: #ffffff;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 32px;
+    gap: 2vw;
 }
-
 .navigation a {
     position: relative;
     display: inline-block;
@@ -124,8 +124,7 @@
     }
 
     .navigation {
-        gap: 24px;
-        font-size: 12px;
+        display: none;
     }
 
     .cta {
@@ -153,14 +152,8 @@
         display: none;
     }
 
-    .navigation a:first-child {
-        display: none;
-    }
-
     .navigation {
-        padding: 15px;
-        gap: 16px;
-        font-size: 10px;
+        display: none;
     }
 
     .cta {

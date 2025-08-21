@@ -11,7 +11,6 @@ export default async function SubmitAdoptionRequest(prevState, formData) {
   const newRequest = {
     animalId: formData.get("animalId"),
     fullName: formData.get("fullName"),
-    // birth: formData.get("birth"),
     phone: formData.get("phone"),
     email: formData.get("email"),
     comment: formData.get("comment"),
@@ -19,7 +18,6 @@ export default async function SubmitAdoptionRequest(prevState, formData) {
 
   if (
     isValidData(newRequest.fullName) ||
-    // isValidData(newRequest.birth) ||
     isValidData(newRequest.phone) ||
     isValidData(newRequest.email) ||
     isValidData(newRequest.comment)

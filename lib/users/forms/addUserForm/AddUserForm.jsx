@@ -1,8 +1,7 @@
 "use client";
 
 import classes from "./AddUserForm.module.css";
-import { useActionState, useState } from "react";
-// import { submitNewUser } from "@/app/actions/submitNewUser";
+import { useState } from "react";
 
 export default function AddUserForm() {
   // const [state, formAction] = useActionState(submitNewUser, { message: null });
@@ -19,11 +18,11 @@ export default function AddUserForm() {
     });
 
     if (respond.ok) {
-      setStatus("Регистрация успешна");
+      setStatus("Success");
       window.location.reload();
     } else {
       const error = await respond.text();
-      setStatus("Ошибка: " + error);
+      setStatus(error);
     }
   }
 

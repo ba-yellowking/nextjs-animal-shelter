@@ -2,7 +2,7 @@ import classes from "./page.module.css";
 
 export default function NotFound() {
   return (
-    <div className={classes.notFound}>
+    <div className={classes.wrapper}>
       <div className={classes.title}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

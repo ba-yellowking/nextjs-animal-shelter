@@ -4,7 +4,7 @@ import classes from "./error.module.css";
 
 export default function Error({ error }) {
   return (
-    <div className={classes.notFound}>
+    <div className={classes.wrapper}>
       <div className={classes.title}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

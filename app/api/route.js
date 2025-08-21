@@ -1,3 +1,5 @@
+// we are using this route because of saving cookies
+
 import { cookies } from "next/headers";
 import { addUser } from "@/lib/users/addUser";
 
