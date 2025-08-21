@@ -1,14 +1,14 @@
 import classes from "./Header.module.css";
 import Link from "next/link";
-import { cookies } from "next/headers";
+// import { cookies } from "next/headers";
 import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
 import AuthorizeModal from "@/lib/users/modals/authorizeModal/AuthorizeModal";
 
 export const dynamic = "force-dynamic";
 
 export default function Header() {
-  const cookieStore = cookies();
-  const isRegistered = cookieStore.get("registered")?.value === "true";
+  // const cookieStore = cookies();
+  // const isRegistered = cookieStore.get("registered")?.value === "true";
 
   return (
     <header className={classes.header}>

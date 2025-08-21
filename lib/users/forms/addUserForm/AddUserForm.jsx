@@ -1,50 +1,18 @@
 "use client";
 
 import classes from "./AddUserForm.module.css";
-import { useState } from "react";
+import { useActionState, useState } from "react";
+import { submitNewUser } from "@/lib/users/actions/submitNewUser";
 
 export default function AddUserForm() {
-  // const [state, formAction] = useActionState(submitNewUser, { message: null });
-
-  const [status, setStatus] = useState("");
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    const respond = await fetch("/api", {
-      method: "POST",
-      body: formData,
-    });
-
-    if (respond.ok) {
-      setStatus("Success");
-      window.location.reload();
-    } else {
-      const error = await respond.text();
-      setStatus(error);
-    }
-  }
+  const [state, formAction] = useActionState(submitNewUser, { message: null });
 
   return (
     <div className={classes.wrapper}>
       <h2 className={classes.title}>Register a new shelter</h2>
 
       {/* server action method */}
-      {/*<form className={classes.form} action={formAction}>*/}
-
-      <form className={classes.form} onSubmit={handleSubmit}>
-        <div className={classes.field}>
-          <label htmlFor="username">Username</label>
-          <input
-            className={classes.inputForm}
-            id="username"
-            name="username"
-            placeholder="Username"
-            required
-          />
-        </div>
-
+      <form className={classes.form} action={formAction}>
         <div className={classes.field}>
           <label htmlFor="email">Email</label>
           <input
@@ -68,7 +36,15 @@ export default function AddUserForm() {
           />
         </div>
 
-        {/*{state.message && <p className={classes.status}>{state.message}</p>}*/}
+        <div className={classes.errorNotification}>
+          {state.errors && (
+            <ul id="form-errors">
+              {Object.keys(state.errors).map((error) => (
+                <li key={error}>{state.errors[error]}</li>
+              ))}
+            </ul>
+          )}
+        </div>
 
         <div className={classes.pending}>
           <button type="submit" className={classes.submitBtn}>

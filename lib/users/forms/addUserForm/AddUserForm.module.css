@@ -67,10 +67,9 @@
     background-color: #3b4f6d;
 }
 
-.status {
-    margin-top: 10px;
+.errorNotification {
+    margin-left: 10px;
     font-weight: 500;
     font-size: 14px;
-    color: #28a745;
-    text-align: center;
+    color: #f30000;
 }
