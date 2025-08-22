@@ -16,8 +16,6 @@ export default function Animals() {
 
   return (
     <>
-      <AddAnimalModal />
-
       <Suspense fallback={<p>Loading...</p>}>
         <Notification />
       </Suspense>

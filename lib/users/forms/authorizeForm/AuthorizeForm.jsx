@@ -3,6 +3,7 @@
 import classes from "./AuthorizeForm.module.css";
 import { useActionState } from "react";
 import { SubmitAuthorization } from "@/lib/users/actions/submitAuthorization";
+import Button from "@/ui/button/Button";
 
 export default function AuthorizeForm() {
   const [state, formAction] = useActionState(SubmitAuthorization, {
@@ -38,9 +39,7 @@ export default function AuthorizeForm() {
         </div>
 
         <div className={classes.pending}>
-          <button type="submit" className={classes.submitBtn}>
-            Sign in
-          </button>
+          <Button type="submit" title="Sign in"></Button>
         </div>
       </form>
     </div>

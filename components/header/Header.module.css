@@ -1,5 +1,4 @@
 .header {
-    width: 100%;
     min-width: 400px;
     display: flex;
     justify-content: center;
@@ -12,7 +11,7 @@
 .content {
     max-width: 1200px;
     width: 100%;
-    height: 100px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,40 +19,32 @@
 }
 
 .logo {
-    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
-    transition: color 0.2s ease;
-}
-.logo:hover {
-    color: #0D1821;
+    gap: 10px;
 }
 
 .pawTrace {
-    position: absolute;
-    left: 130px;
-    top: 0;
     color: #ffffff;
-    transition: color 0.2s ease;
-
-}
-.logo:hover .pawTrace {
-    color: #0D1821;
 }
 
 .navigation {
-    min-width: 400px;
-    font-weight: 700;
-    color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2vw;
+    min-width: 400px;
+    height: 100%;
+    margin: 0 20px;
+    font-weight: 500;
+    color: #ffffff;
+    gap: 15px;
 }
 .navigation a {
     position: relative;
@@ -75,36 +66,71 @@
     width: 100%;
 }
 
-.adoption {
+.auth {
+    min-width: 100px;
+    height: 100%;
+    margin: 0 20px;
     display: flex;
+    justify-items: center;
     align-items: center;
     gap: 20px;
 }
+.authButton {
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 150px;
+}
 
-.cta {
+.adminNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+    height: 100%;
+    margin: 0 20px;
+    font-weight: 500;
+    color: #ffffff;
+    gap: 15px;
+}
+.adminLink {
     position: relative;
-    font-size: 30px;
-    font-weight: bold;
-    color: #ffffff;
-    text-align: end;
-    transition: color 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 }
-.cta:hover {
-    color: #0D1821;
-}
-
-.click {
+.adminLink::after {
+    content: "";
     position: absolute;
-    left: -15px;
-    top: 0;
-    transform: rotate(90deg);
-    color: #ffffff;
-    transition: color 0.2s ease;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background-color: #FFFFFF;
+    transition: width 0.4s ease;
 }
-.cta:hover .click {
-    color: #0D1821;
+.adminLink:hover::after {
+    width: 100%;
 }
 
+.adminCta {
+    min-width: 100px;
+    height: 100%;
+    margin: 0 20px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+.adminCtaButton {
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 150px;
+}
+
+.add {
+    display: none;
+    margin-left: auto;
+}
 
 @media (max-width: 900px) {
     .content {
@@ -127,14 +153,9 @@
         display: none;
     }
 
-    .cta {
-        font-size: 20px;
-    }
-
-    .click {
-        width: 20px;
-        height: 20px;
-        left: -10px;
+    .adminNav {
+        font-size: 16px;
+        margin: 0 10px;
     }
 }
 
@@ -156,14 +177,25 @@
         display: none;
     }
 
-    .cta {
-        font-size: 16px;
+    .adminNav {
+        font-size: 14px;
+        margin: 0 5px;
     }
 
-    .click {
-        width: 20px;
-        height: 20px;
-        left: -8px;
+    .adminCta {
+        min-width: 40px;
+    }
+
+    .adminCtaButton {
+        display: none;
+    }
+
+    .add {
+        display: inline;
+    }
+
+    .add:hover {
+        transform: rotate(180deg);
     }
 }
 

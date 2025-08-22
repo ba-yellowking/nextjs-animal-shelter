@@ -1,6 +1,5 @@
 "use client";
 
-import classes from "./AddUserModal.module.css";
 import useModal from "@/hooks/useModal";
 import Modal from "@/ui/modal/Modal";
 import AddUserForm from "@/lib/users/forms/addUserForm/AddUserForm";
@@ -11,7 +10,7 @@ export default function AddUserModal() {
 
   return (
     <main>
-      <Button title="Sign up" action={open} />
+      <Button type="button" title="Sign up" action={open} />
 
       {isOpen && (
         <Modal onClose={close}>

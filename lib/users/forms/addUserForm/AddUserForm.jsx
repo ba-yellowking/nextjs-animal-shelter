@@ -1,11 +1,14 @@
 "use client";
 
 import classes from "./AddUserForm.module.css";
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 import { submitNewUser } from "@/lib/users/actions/submitNewUser";
+import Button from "@/ui/button/Button";
 
 export default function AddUserForm() {
-  const [state, formAction] = useActionState(submitNewUser, { message: null });
+  const [formState, formAction] = useActionState(submitNewUser, {
+    message: null,
+  });
 
   return (
     <div className={classes.wrapper}>
@@ -37,19 +40,17 @@ export default function AddUserForm() {
         </div>
 
         <div className={classes.errorNotification}>
-          {state.errors && (
+          {formState.errors && (
             <ul id="form-errors">
-              {Object.keys(state.errors).map((error) => (
-                <li key={error}>{state.errors[error]}</li>
+              {Object.keys(formState.errors).map((error) => (
+                <li key={error}>{formState.errors[error]}</li>
               ))}
             </ul>
           )}
         </div>
 
         <div className={classes.pending}>
-          <button type="submit" className={classes.submitBtn}>
-            Sign up
-          </button>
+          <Button type="submit" title="Sign up"></Button>
         </div>
       </form>
     </div>

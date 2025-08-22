@@ -11,10 +11,6 @@ export default function HomePage() {
   return (
     <>
       <section className={classes.section}>
-        <Link href="/animals">Animal List</Link>
-      </section>
-
-      <section className={classes.section}>
         <Banner />
       </section>
 
@@ -26,11 +22,11 @@ export default function HomePage() {
         <AdoptionDetailsOne />
       </section>
 
-      <section id="donation" className={classes.section}>
+      <section className={classes.section}>
         <AdoptionDetailsTwo />
       </section>
 
-      <section className={classes.section}>
+      <section id="donation" className={classes.section}>
         <Donation />
       </section>
 

@@ -1,24 +1,21 @@
 import classes from "./Header.module.css";
 import Link from "next/link";
-// import { cookies } from "next/headers";
 import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
 import AuthorizeModal from "@/lib/users/modals/authorizeModal/AuthorizeModal";
+import { verifyAuth } from "@/lib/users/auth";
+import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 
 export const dynamic = "force-dynamic";
 
-export default function Header() {
-  // const cookieStore = cookies();
-  // const isRegistered = cookieStore.get("registered")?.value === "true";
+export default async function Header() {
+  const { user, session } = await verifyAuth();
 
   return (
     <header className={classes.header}>
       <div className={classes.content}>
-        <Link href="/" className={classes.logo}>
-          ANIMAL
-          <br />
-          SHELTER
+        <div className={classes.logo}>
+          <Link href="/">SHELTER</Link>
           <svg
-            className={classes.pawTrace}
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
@@ -33,19 +30,58 @@ export default function Header() {
             <ellipse cx="328" cy="120" fill="currentColor" rx="56" ry="72" />
             <ellipse cx="440" cy="216" fill="currentColor" rx="56" ry="72" />
           </svg>
-        </Link>
-
-        <div className={classes.navigation}>
-          <a href="/#about">About us</a>
-          <a href="/#adoption">How to adopt?</a>
-          <a href="/#donation">How Can I Help?</a>
-          <a href="/#faq">FAQ</a>
         </div>
 
-        <div className={classes.adoption}>
-          <AuthorizeModal />
-          <AddUserModal />
-        </div>
+        {!user && !session && (
+          <>
+            <div className={classes.navigation}>
+              <a href="/#about">About</a>
+              <a href="/#adoption">Adoption</a>
+              <a href="/#donation">Donation</a>
+              <a href="/#faq">FAQ</a>
+              <Link href="/animals">Animals</Link>
+            </div>
+
+            <div className={classes.auth}>
+              <div className={classes.authButton}>
+                <AuthorizeModal />
+              </div>
+              <div className={classes.authButton}>
+                <AddUserModal />
+              </div>
+            </div>
+          </>
+        )}
+
+        {user && session && (
+          <>
+            <div className={classes.adminNav}>
+              <Link className={classes.adminLink} href="/animals">
+                Animals
+              </Link>
+              <Link className={classes.adminLink} href="/animals">
+                Requests
+              </Link>
+            </div>
+            <div className={classes.adminCta}>
+              <div className={classes.adminCtaButton}>
+                <AddAnimalModal />
+              </div>
+              <svg
+                className={classes.add}
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#ffffff"
+                  d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                />
+              </svg>
+            </div>
+          </>
+        )}
       </div>
     </header>
   );

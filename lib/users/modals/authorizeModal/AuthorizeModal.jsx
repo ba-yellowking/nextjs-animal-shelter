@@ -11,11 +11,7 @@ export default function AuthorizeModal() {
 
   return (
     <main>
-      <Button title="Sign in" action={open} />
-
-      {/*<button onClick={open} className={classes.signUpBtn}>*/}
-      {/*  Sign in*/}
-      {/*</button>*/}
+      <Button type="button" title="Sign in" action={open} />
 
       {isOpen && (
         <Modal onClose={close}>
