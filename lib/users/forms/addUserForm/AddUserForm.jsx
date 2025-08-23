@@ -6,13 +6,11 @@ import { submitNewUser } from "@/lib/users/actions/submitNewUser";
 import Button from "@/ui/button/Button";
 
 export default function AddUserForm() {
-  const [formState, formAction] = useActionState(submitNewUser, {
-    message: null,
-  });
+  const [formState, formAction] = useActionState(submitNewUser, {});
 
   return (
     <div className={classes.wrapper}>
-      <h2 className={classes.title}>Register a new shelter</h2>
+      <h2 className={classes.title}>Create a new account</h2>
 
       {/* server action method */}
       <form className={classes.form} action={formAction}>

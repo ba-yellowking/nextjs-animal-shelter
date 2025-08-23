@@ -74,3 +74,10 @@
     color: #28a745;
     text-align: center;
 }
+
+.errorNotification {
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #f30000;
+}

@@ -6,9 +6,7 @@ import { SubmitAuthorization } from "@/lib/users/actions/submitAuthorization";
 import Button from "@/ui/button/Button";
 
 export default function AuthorizeForm() {
-  const [state, formAction] = useActionState(SubmitAuthorization, {
-    message: null,
-  });
+  const [formState, formAction] = useActionState(SubmitAuthorization, {});
 
   return (
     <div className={classes.wrapper}>
@@ -36,6 +34,16 @@ export default function AuthorizeForm() {
             required
             type="password"
           />
+        </div>
+
+        <div className={classes.errorNotification}>
+          {formState.errors && (
+            <ul id="form-errors">
+              {Object.keys(formState.errors).map((error) => (
+                <li key={error}>{formState.errors[error]}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div className={classes.pending}>

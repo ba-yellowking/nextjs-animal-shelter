@@ -62,7 +62,7 @@ export default async function AnimalDetailsPage({ params }) {
           <strong>Other:</strong> {animal.description}
         </p>
 
-        {user && session && <AdoptionRequestModal animalId={animal.id} />}
+        {!user && !session && <AdoptionRequestModal animalId={animal.id} />}
       </div>
     </main>
   );

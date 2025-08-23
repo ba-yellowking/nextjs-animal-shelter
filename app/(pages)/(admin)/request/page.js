@@ -3,6 +3,7 @@ import { getRequests } from "@/lib/users/getRequests";
 import RequestCard from "@/lib/users/components/cards/RequestCard";
 import { verifyAuth } from "@/lib/users/auth";
 import { redirect } from "next/navigation";
+import { log } from "next/dist/server/typescript/utils";
 
 export default async function RequestPage() {
   const { user, session } = await verifyAuth();
@@ -12,6 +13,16 @@ export default async function RequestPage() {
   }
 
   const requests = getRequests();
+
+  if (!requests || requests.length === 0) {
+    return (
+      <div className={classes.requestsWrap}>
+        <section className={classes.container}>
+          <h1>No requests</h1>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <>
