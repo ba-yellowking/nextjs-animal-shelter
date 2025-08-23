@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import classes from "./page.module.css";
 import { getAnimalBySlug } from "@/lib/animals/getAnimalsBySlug";
 import AdoptionRequestModal from "@/modals/adoptionRequestModal/AdoptionRequestModal";
+import { verifyAuth } from "@/lib/users/auth";
 
 // dynamic metadata for slugs
 export async function generateMetadata({ params }) {
@@ -20,6 +21,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function AnimalDetailsPage({ params }) {
+  const { user, session } = verifyAuth();
+
   const { slug } = params;
 
   // server action - fetching information by slug
@@ -59,7 +62,7 @@ export default async function AnimalDetailsPage({ params }) {
           <strong>Other:</strong> {animal.description}
         </p>
 
-        <AdoptionRequestModal animalId={animal.id} />
+        {user && session && <AdoptionRequestModal animalId={animal.id} />}
       </div>
     </main>
   );

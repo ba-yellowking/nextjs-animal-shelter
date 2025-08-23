@@ -1,6 +1,5 @@
 "use client";
 
-import classes from "./AuthorizeModal.module.css";
 import useModal from "@/hooks/useModal";
 import Modal from "@/ui/modal/Modal";
 import AuthorizeForm from "@/lib/users/forms/authorizeForm/AuthorizeForm";

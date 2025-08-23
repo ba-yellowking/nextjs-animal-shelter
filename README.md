@@ -14,7 +14,7 @@ This is a web-based application built with **Next.js** (using both client and se
 
 ## Key Features
 
-- **Animal Cards** – each animal is shown as a card on the listing page, displaying name, photo, and key info.
+- **Animal RequestCard** – each animal is shown as a card on the listing page, displaying name, photo, and key info.
 - **Routing** – clean and dynamic routing for each animal using slugs (`/animals/max`, etc.).
 - **Database** – built using **better-sqlite3** for fast and simple data storage.
 - **API Routes** – dynamic and RESTful API endpoints to fetch animal data.

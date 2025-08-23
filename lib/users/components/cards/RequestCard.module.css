@@ -1,0 +1,28 @@
+.requestCard {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s ease;
+}
+
+.requestCard h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.requestCard p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+@media(max-width: 600px) {
+    .requestCard {
+        min-width: 240px;
+    }
+}

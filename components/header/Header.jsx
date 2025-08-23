@@ -2,8 +2,8 @@ import classes from "./Header.module.css";
 import Link from "next/link";
 import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
 import AuthorizeModal from "@/lib/users/modals/authorizeModal/AuthorizeModal";
-import { verifyAuth } from "@/lib/users/auth";
 import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
+import { verifyAuth } from "@/lib/users/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -59,7 +59,7 @@ export default async function Header() {
               <Link className={classes.adminLink} href="/animals">
                 Animals
               </Link>
-              <Link className={classes.adminLink} href="/animals">
+              <Link className={classes.adminLink} href="/request">
                 Requests
               </Link>
             </div>
