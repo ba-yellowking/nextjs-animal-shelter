@@ -3,14 +3,16 @@
 import useModal from "@/hooks/useModal";
 import Modal from "@/ui/modal/Modal";
 import AuthorizeForm from "@/lib/users/forms/authorizeForm/AuthorizeForm";
-import Button from "@/ui/button/Button";
+import classes from "./AuthorizeModal.module.css";
 
 export default function AuthorizeModal() {
   const [isOpen, open, close] = useModal();
 
   return (
     <main>
-      <Button type="button" title="Sign in" action={open} />
+      <p className={classes.signIn} onClick={open}>
+        Sign in
+      </p>
 
       {isOpen && (
         <Modal onClose={close}>

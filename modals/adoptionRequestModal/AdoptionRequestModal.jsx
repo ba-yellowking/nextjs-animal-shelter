@@ -9,7 +9,7 @@ export default function AdoptionRequestModal({ animalId }) {
   const [isOpen, open, close] = useModal();
   return (
     <main>
-      <Button type="button" action={open} title="Take me home"></Button>
+      <Button type="button" action={open} title="Adopt"></Button>
       {isOpen && (
         <Modal onClose={close}>
           <AdoptionRequestForm animalId={animalId} />

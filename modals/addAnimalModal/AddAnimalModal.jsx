@@ -11,7 +11,7 @@ function AddAnimalModal() {
 
   return (
     <main>
-      <Button type="button" action={open} title="Add animal"></Button>
+      <p onClick={open}>Add animal</p>
 
       {isOpen && (
         <Modal onClose={close}>

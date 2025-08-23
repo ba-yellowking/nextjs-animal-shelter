@@ -3,7 +3,6 @@ import { getRequests } from "@/lib/users/getRequests";
 import RequestCard from "@/lib/users/components/cards/RequestCard";
 import { verifyAuth } from "@/lib/users/auth";
 import { redirect } from "next/navigation";
-import { log } from "next/dist/server/typescript/utils";
 
 export default async function RequestPage() {
   const { user, session } = await verifyAuth();

@@ -1,12 +1,5 @@
 .signIn {
-    height: 100px;
-    padding-left: 30px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    font-size: 30px;
-    font-weight: bold;
+    font-weight: 500;
     color: #ffffff;
+    cursor: pointer;
 }

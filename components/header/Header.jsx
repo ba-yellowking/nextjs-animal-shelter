@@ -4,6 +4,8 @@ import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
 import AuthorizeModal from "@/lib/users/modals/authorizeModal/AuthorizeModal";
 import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { verifyAuth } from "@/lib/users/auth";
+import { LogOut } from "@/lib/users/actions/LogOut";
+import Button from "@/ui/button/Button";
 
 export const dynamic = "force-dynamic";
 
@@ -62,11 +64,14 @@ export default async function Header() {
               <Link className={classes.adminLink} href="/request">
                 Requests
               </Link>
-            </div>
-            <div className={classes.adminCta}>
-              <div className={classes.adminCtaButton}>
+              <div className={classes.adminLink}>
                 <AddAnimalModal />
               </div>
+            </div>
+            <div className={classes.adminCta}>
+              <form action={LogOut}>
+                <Button title="Log out"></Button>
+              </form>
               <svg
                 className={classes.add}
                 xmlns="http://www.w3.org/2000/svg"
