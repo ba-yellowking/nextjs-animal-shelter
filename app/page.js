@@ -5,6 +5,7 @@ import AdoptionDetailsOne from "@/components/sections/adoption/one/AdoptionDetai
 import AdoptionDetailsTwo from "@/components/sections/adoption/two/AdoptionDetailsTwo";
 import Donation from "@/components/sections/donation/Donation";
 import Faq from "@/components/sections/adoption/faq/Faq";
+import Link from "next/link";
 
 export default function HomePage() {
   return (

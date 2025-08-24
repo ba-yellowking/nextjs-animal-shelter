@@ -11,7 +11,7 @@ export default function AuthorizeModal() {
   return (
     <main>
       <p className={classes.signIn} onClick={open}>
-        Sign in
+        Log in
       </p>
 
       {isOpen && (

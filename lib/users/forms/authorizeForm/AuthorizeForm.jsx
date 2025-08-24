@@ -2,11 +2,13 @@
 
 import classes from "./AuthorizeForm.module.css";
 import { useActionState } from "react";
-import { SignIn } from "@/lib/users/actions/SignIn";
+import { SignInAction } from "@/lib/users/actions/SignInAction";
 import Button from "@/ui/button/Button";
 
 export default function AuthorizeForm() {
-  const [formState, formAction] = useActionState(SignIn, { errors: null });
+  const [formState, formAction] = useActionState(SignInAction, {
+    errors: null,
+  });
 
   return (
     <div className={classes.wrapper}>

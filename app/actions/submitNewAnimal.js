@@ -40,6 +40,5 @@ export async function submitNewAnimal(prevState, formData) {
   // to revalidate all the site - "/", "layout"
   revalidatePath("/animals");
 
-  // redirecting after adding a new animal
   redirect("/animals");
 }

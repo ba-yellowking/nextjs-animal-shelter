@@ -1,7 +1,7 @@
 .wrapper {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 20px;
     font-family: sans-serif;
     line-height: 1.6;
 }

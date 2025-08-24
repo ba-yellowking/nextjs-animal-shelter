@@ -2,11 +2,13 @@
 
 import classes from "./AddUserForm.module.css";
 import { useActionState } from "react";
-import { SignUp } from "@/lib/users/actions/SignUp";
+import { SignUpAction } from "@/lib/users/actions/SignUpAction";
 import Button from "@/ui/button/Button";
 
 export default function AddUserForm() {
-  const [formState, formAction] = useActionState(SignUp, { errors: null });
+  const [formState, formAction] = useActionState(SignUpAction, {
+    errors: null,
+  });
 
   return (
     <div className={classes.wrapper}>

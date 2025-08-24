@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function AnimalDetailsPage({ params }) {
-  const { user, session } = verifyAuth();
+  const { user, session } = await verifyAuth();
 
   const { slug } = params;
 

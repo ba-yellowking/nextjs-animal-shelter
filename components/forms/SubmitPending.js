@@ -8,7 +8,7 @@ export default function SubmitPending({ text }) {
 
   return (
     <button disabled={pending} className={classes.submit}>
-      {pending ? "Submitting..." : text}
+      {pending ? "Loading..." : text}
     </button>
   );
 }

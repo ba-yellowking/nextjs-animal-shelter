@@ -17,7 +17,7 @@ export default async function RequestPage() {
     return (
       <div className={classes.requestsWrap}>
         <section className={classes.container}>
-          <h1>No requests</h1>
+          <h1 className={classes.noRequests}>No requests</h1>
         </section>
       </div>
     );

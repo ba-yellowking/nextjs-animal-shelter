@@ -4,7 +4,7 @@ import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
 import AuthorizeModal from "@/lib/users/modals/authorizeModal/AuthorizeModal";
 import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { verifyAuth } from "@/lib/users/auth";
-import { LogOut } from "@/lib/users/actions/LogOut";
+import { LogOutAction } from "@/lib/users/actions/LogOutAction";
 import Button from "@/ui/button/Button";
 
 export const dynamic = "force-dynamic";
@@ -44,11 +44,15 @@ export default async function Header() {
               <Link href="/animals">Animals</Link>
             </div>
 
+            <Link className={classes.animalsLink} href="/animals">
+              Animals
+            </Link>
+
             <div className={classes.auth}>
-              <div className={classes.authButton}>
+              <div className={classes.authModal}>
                 <AuthorizeModal />
               </div>
-              <div className={classes.authButton}>
+              <div className={classes.authModal}>
                 <AddUserModal />
               </div>
             </div>
@@ -68,22 +72,10 @@ export default async function Header() {
                 <AddAnimalModal />
               </div>
             </div>
-            <div className={classes.adminCta}>
-              <form action={LogOut}>
+            <div className={classes.adminLogOut}>
+              <form action={LogOutAction}>
                 <Button title="Log out"></Button>
               </form>
-              <svg
-                className={classes.add}
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="#ffffff"
-                  d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-                />
-              </svg>
             </div>
           </>
         )}

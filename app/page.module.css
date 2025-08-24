@@ -7,6 +7,14 @@
     background-color: #F9F9F9;
 }
 
+.animals {
+    text-align: center;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-color: #465C86;
+}
+
 /*not found -------------------------------- */
 .wrapper {
     display: flex;

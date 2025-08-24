@@ -9,6 +9,10 @@
     transition: transform 0.2s ease;
 }
 
+.requestCard h1 {
+    padding: 0;
+}
+
 .requestCard h2 {
     margin: 0;
     font-size: 1.5rem;

@@ -13,7 +13,7 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
-.container h1 {
+.noRequests {
     padding: 20px;
 }
 
