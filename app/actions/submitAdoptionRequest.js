@@ -27,8 +27,6 @@ export default async function SubmitAdoptionRequest(prevState, formData) {
     };
   }
 
-  // await submitRequest(newRequest);
-
   db.prepare(
     `
       INSERT INTO adoption_requests (animalId, fullName, phone, email, comment)

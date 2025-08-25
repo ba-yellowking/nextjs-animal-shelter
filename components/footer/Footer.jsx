@@ -8,7 +8,7 @@ export default function Footer() {
         <div className={classes.column}>
           <h3>Animal Shelter</h3>
           <Link href="/contacts">Contact Us</Link>
-          <a href="/">Our team</a>
+          <a href="/team">Our team</a>
           <a href="/">Careers</a>
 
           <div className={classes.socialMedia}>

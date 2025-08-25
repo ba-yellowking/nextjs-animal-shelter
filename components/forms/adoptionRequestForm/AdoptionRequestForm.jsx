@@ -25,17 +25,6 @@ export default function AdoptionRequestForm({ animalId }) {
           />
         </div>
 
-        {/*<div className={classes.field}>*/}
-        {/*  <label htmlFor="birth">Date of birth</label>*/}
-        {/*  <input*/}
-        {/*    className={classes.inputForm}*/}
-        {/*    name="birth"*/}
-        {/*    id="birth"*/}
-        {/*    type="date"*/}
-        {/*    required*/}
-        {/*  />*/}
-        {/*</div>*/}
-
         <div className={classes.field}>
           <label htmlFor="phone">Phone number</label>
           <input

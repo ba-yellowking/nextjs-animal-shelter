@@ -4,7 +4,7 @@ import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
 import AuthorizeModal from "@/lib/users/modals/authorizeModal/AuthorizeModal";
 import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { verifyAuth } from "@/lib/users/auth";
-import { LogOutAction } from "@/lib/users/actions/LogOutAction";
+import { LogOutAction } from "@/lib/users/actions/auth/LogOutAction";
 import Button from "@/ui/button/Button";
 
 export const dynamic = "force-dynamic";

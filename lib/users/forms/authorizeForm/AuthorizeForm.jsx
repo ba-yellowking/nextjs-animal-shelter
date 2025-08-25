@@ -2,7 +2,7 @@
 
 import classes from "./AuthorizeForm.module.css";
 import { useActionState } from "react";
-import { SignInAction } from "@/lib/users/actions/SignInAction";
+import { SignInAction } from "@/lib/users/actions/auth/SignInAction";
 import Button from "@/ui/button/Button";
 
 export default function AuthorizeForm() {

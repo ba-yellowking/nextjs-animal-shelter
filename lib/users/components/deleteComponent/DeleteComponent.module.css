@@ -1,0 +1,15 @@
+.delete {
+    border: none;
+    background: transparent;
+    padding: 6px;
+    margin: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete:hover {
+    background: rgba(0, 0, 0, 0.06);
+}

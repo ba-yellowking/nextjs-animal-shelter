@@ -27,8 +27,8 @@
 }
 
 .animalCard a {
+    font-weight: bold;
     text-decoration: none;
-    color: #465C86;
 }
 
 .animalCard a:hover {
