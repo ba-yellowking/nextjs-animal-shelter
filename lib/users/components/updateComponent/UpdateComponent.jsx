@@ -27,8 +27,8 @@ export default function InlineUpdate({ animal, onDone }) {
 
   useEffect(() => {
     if (state.ok) {
-      router.refresh(); // обновляем данные
-      onDone?.(); // закрываем модалку
+      router.refresh();
+      onDone?.();
     }
   }, [state.ok, router, onDone]);
 
