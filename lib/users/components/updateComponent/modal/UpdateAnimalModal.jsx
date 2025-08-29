@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Modal from "@/ui/modal/Modal";
 import classes from "../UpdateComponent.module.css";
-import InlineUpdate from "@/lib/users/components/updateComponent/UpdateComponent";
+import UpdateComponent from "@/lib/users/components/updateComponent/UpdateComponent";
 
 export default function UpdateAnimalModal({ animal }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function UpdateAnimalModal({ animal }) {
 
       {isOpen && (
         <Modal onClose={close}>
-          <InlineUpdate animal={animal} onDone={close} />
+          <UpdateComponent animal={animal} close={close} />
         </Modal>
       )}
     </>

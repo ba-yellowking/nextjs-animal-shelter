@@ -1,26 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useActionState } from "react";
 import { useRouter } from "next/navigation";
 import { useFormStatus } from "react-dom";
 
 import classes from "./UpdateComponent.module.css";
-import { updateAnimalInline } from "@/lib/users/components/updateComponent/UpdateAnimalAction";
+import { updateAnimalAction } from "@/lib/users/components/updateComponent/UpdateAnimalAction";
+import SubmitPending from "@/components/forms/SubmitPending";
 
-function SubmitBtn({ text }) {
-  const { pending } = useFormStatus();
-  return (
-    <button type="submit" disabled={pending} className={classes.primary}>
-      {pending ? "Saving..." : text}
-    </button>
-  );
-}
-
-export default function InlineUpdate({ animal, onDone }) {
+export default function UpdateComponent({ animal, close }) {
   const router = useRouter();
 
-  const [state, formAction] = useActionState(updateAnimalInline, {
+  const [state, formAction] = useActionState(updateAnimalAction, {
     message: null,
     ok: false,
   });
@@ -28,12 +20,12 @@ export default function InlineUpdate({ animal, onDone }) {
   useEffect(() => {
     if (state.ok) {
       router.refresh();
-      onDone?.();
+      close?.();
     }
-  }, [state.ok, router, onDone]);
+  }, [state.ok, router, close]);
 
   return (
-    <form className={classes.inlineForm} action={formAction} onReset={onDone}>
+    <form className={classes.inlineForm} action={formAction} onReset={close}>
       <input type="hidden" name="id" defaultValue={animal.id} />
       <input type="hidden" name="slug" defaultValue={animal.slug} />
 
@@ -103,7 +95,7 @@ export default function InlineUpdate({ animal, onDone }) {
       {state.message && <p className={classes.status}>{state.message}</p>}
 
       <div className={classes.actions}>
-        <SubmitBtn text="Save" />
+        <SubmitPending type="submit" text="Save" />
         <button type="reset" className={classes.ghost}>
           Cancel
         </button>

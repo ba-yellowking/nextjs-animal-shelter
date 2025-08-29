@@ -1,15 +1,22 @@
 import classes from "./RequestCard.module.css";
+import CapitalizeWords from "@/helpers/CapitalizeWords";
 
 export default function RequestCard({ request }) {
+  const date = new Date(request.created_at).toLocaleString("kk-KZ");
+
+  const fullName = CapitalizeWords(request.fullName);
+  const animalName = CapitalizeWords(request.animalName);
+
   return (
     <>
       <div className={classes.requestCard}>
-        <h1>#{request.id}</h1>
-        <h2>
-          <strong>Name:</strong> {request.fullName}
-        </h2>
+        <div className={classes.created}>Dated: {date}</div>
+        <div className={classes.title}>
+          <h1>#{request.id}</h1>
+        </div>
+        <h2>Name: {fullName}</h2>
         <p>
-          <strong>Wants to adopt:</strong> {request.animalName}
+          <strong>For adoption:</strong> {animalName}
         </p>
         <p>
           <strong>Phone:</strong> {request.phone}
@@ -19,6 +26,9 @@ export default function RequestCard({ request }) {
         </p>
         <p>
           <strong>Comment:</strong> {request.comment}
+        </p>
+        <p>
+          <strong>Status:</strong> {request.status}
         </p>
       </div>
     </>

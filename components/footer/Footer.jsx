@@ -9,7 +9,6 @@ export default function Footer() {
           <h3>Animal Shelter</h3>
           <Link href="/contacts">Contact Us</Link>
           <a href="/team">Our team</a>
-          <a href="/">Careers</a>
 
           <div className={classes.socialMedia}>
             <a href="/">
@@ -64,26 +63,36 @@ export default function Footer() {
               <p>Sat - Sun</p>
             </div>
             <div className={classes.hours}>
-              <p>11:00 - 17:00</p>
-              <p>11:00 - 16:00</p>
+              <p>10:00 - 19:00</p>
+              <p>10:00 - 16:00</p>
             </div>
           </div>
         </div>
 
         <div className={`${classes.cats} ${classes.column}`}>
-          <h3>About cats and kittens</h3>
-          <a>Cat breeds</a>
-          <a>How to adopt a cat?</a>
-          <a>What do you need to know?</a>
-          <a>Other cat information</a>
+          <h3>Cats & Kittens</h3>
+          <a href="https://www.purina.com/cats/cat-breeds">Cat breeds</a>
+          <a href="https://www.petfinder.com/cats-and-kittens/adoption/finding/how-to-adopt-a-cat/">
+            How to adopt a cat?
+          </a>
+          <a href="https://www.petakids.com/save-animals/dog-adoption-guide/">
+            What do you need to know?
+          </a>
+          <a href="https://cats.com/">Other cat information</a>
         </div>
 
         <div className={`${classes.dogs} ${classes.column}`}>
-          <h3>About dogs and puppies</h3>
-          <a>Dog breeds</a>
-          <a>How to adopt a dog?</a>
-          <a>What do you need to know?</a>
-          <a>Other dog information</a>
+          <h3>Dogs & puppies</h3>
+          <a href="https://www.purina.com/dogs/dog-breeds">Dog breeds</a>
+          <a href="https://www.petfinder.com/dogs-and-puppies/adoption/new-dog/tips-for-the-first-30-days-new-dog/">
+            How to adopt a dog?
+          </a>
+          <a href="https://www.petakids.com/save-animals/dog-adoption-guide/">
+            What do you need to know?
+          </a>
+          <a href="https://www.companionanimalpsychology.com/p/all-about-dogs.html">
+            Other dog information
+          </a>
         </div>
       </div>
       <div className={classes.developer}>
