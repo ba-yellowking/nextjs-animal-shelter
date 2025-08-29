@@ -33,6 +33,20 @@
     color: #333;
 }
 
+.status {
+    margin: 0;
+    font-size: 1rem;
+}
+.statusFulfilled {
+    color: green;
+}
+.statusRejected {
+    color: red;
+}
+.statusPending {
+    color: orange;
+}
+
 @media(max-width: 600px) {
     .requestCard {
         min-width: 240px;

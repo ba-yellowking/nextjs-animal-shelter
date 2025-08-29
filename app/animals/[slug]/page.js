@@ -7,8 +7,8 @@ import { verifyAuth } from "@/lib/users/auth";
 
 // dynamic metadata for slugs
 export async function generateMetadata({ params }) {
-  const slug = params.slug;
-  const animal = getAnimalBySlug(slug);
+  const { slug } = await params;
+  const animal = await getAnimalBySlug(slug);
 
   if (!animal) {
     notFound();
@@ -23,10 +23,10 @@ export async function generateMetadata({ params }) {
 export default async function AnimalDetailsPage({ params }) {
   const { user, session } = await verifyAuth();
 
-  const { slug } = params;
+  const { slug } = await params;
 
   // server action - fetching information by slug
-  const animal = getAnimalBySlug(slug);
+  const animal = await getAnimalBySlug(slug);
 
   if (!animal) {
     notFound();

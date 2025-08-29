@@ -11,7 +11,8 @@ export default async function RequestPage() {
     redirect("/");
   }
 
-  const requests = getRequests();
+  const requests = await getRequests();
+  // ?
 
   if (!requests || requests.length === 0) {
     return (

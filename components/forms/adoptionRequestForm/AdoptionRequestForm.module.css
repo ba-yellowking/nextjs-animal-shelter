@@ -40,9 +40,19 @@
     width: 100%;
     box-sizing: border-box;
 }
-
 .inputForm:focus {
     border-color: #465C86;
+}
+
+.phoneInputForm {
+    padding: 10px 10px 10px 50px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .textAreaForm {

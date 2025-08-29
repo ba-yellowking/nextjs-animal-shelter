@@ -1,12 +1,19 @@
+"use client";
+
 import classes from "./AdoptionRequestForm.module.css";
 import SubmitPending from "@/components/forms/SubmitPending";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import SubmitAdoptionRequest from "@/app/actions/submitAdoptionRequest";
+
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export default function AdoptionRequestForm({ animalId }) {
   const [state, formAction] = useActionState(SubmitAdoptionRequest, {
     message: null,
   });
+
+  const [phone, setPhone] = useState("");
 
   return (
     <div className={classes.wrapper}>
@@ -25,19 +32,27 @@ export default function AdoptionRequestForm({ animalId }) {
           />
         </div>
 
-        <div className={classes.field}>
+        <div className={classes.phoneField}>
           <label htmlFor="phone">Phone number</label>
-          <input
-            className={classes.inputForm}
-            name="phone"
-            id="phone"
-            type="tel"
-            required
+
+          <PhoneInput
+            country="kz"
+            value={phone}
+            onChange={(value) => setPhone(value)}
+            inputProps={{
+              name: "phone",
+              id: "phone",
+              required: true,
+              className: classes.phoneInputForm,
+              autoComplete: "tel",
+            }}
+            countryCodeEditable={false}
+            preferredCountries={["kz"]}
           />
         </div>
 
         <div className={classes.field}>
-          <label htmlFor="phone">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             className={classes.inputForm}
             name="email"
