@@ -16,6 +16,7 @@ export async function submitNewAnimal(prevState, formData) {
     name: formData.get("name"),
     age: formData.get("age"),
     species: formData.get("species"),
+    breed: formData.get("breed"),
     color: formData.get("color"),
     description: formData.get("description"),
     image: formData.get("image"),
@@ -24,6 +25,7 @@ export async function submitNewAnimal(prevState, formData) {
   if (
     isValidData(newAnimal.name) ||
     isValidData(newAnimal.age) ||
+    isValidData(newAnimal.breed) ||
     isValidData(newAnimal.color) ||
     isValidData(newAnimal.description) ||
     !newAnimal.image ||

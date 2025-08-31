@@ -12,7 +12,6 @@ export default async function RequestPage() {
   }
 
   const requests = await getRequests();
-  // ?
 
   if (!requests || requests.length === 0) {
     return (

@@ -3,17 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { verifyAuth } from "@/lib/users/auth";
 import DeleteComponent from "@/lib/users/components/deleteComponent/DeleteComponent";
-import UpdateComponent from "@/lib/users/components/updateComponent/UpdateComponent";
 import UpdateAnimalModal from "@/lib/users/components/updateComponent/modal/UpdateAnimalModal";
+import CapitalizeWords from "@/helpers/CapitalizeWords";
 
 export default async function AnimalCard({ animal }) {
   const { user, session } = await verifyAuth();
+
+  const name = CapitalizeWords(animal.name);
 
   return (
     <div key={animal.id} className={classes.animalCard}>
       <div className={classes.heading}>
         <Link className={classes.title} href={`/animals/${animal.slug}`}>
-          {animal.name}
+          {name}
         </Link>
 
         {user && session && (
@@ -25,6 +27,7 @@ export default async function AnimalCard({ animal }) {
       </div>
 
       <p>Species: {animal.species}</p>
+      <p>Breed: {animal.breed}</p>
       <p>Age: {animal.age}</p>
       <p>Color: {animal.color}</p>
       <p>Information: {animal.description}</p>

@@ -4,6 +4,7 @@ import classes from "./page.module.css";
 import { getAnimalBySlug } from "@/lib/animals/getAnimalsBySlug";
 import AdoptionRequestModal from "@/modals/adoptionRequestModal/AdoptionRequestModal";
 import { verifyAuth } from "@/lib/users/auth";
+import CapitalizeWords from "@/helpers/CapitalizeWords";
 
 // dynamic metadata for slugs
 export async function generateMetadata({ params }) {
@@ -32,6 +33,8 @@ export default async function AnimalDetailsPage({ params }) {
     notFound();
   }
 
+  const name = CapitalizeWords(animal.name);
+
   return (
     <main className={classes.card}>
       <div className={classes.image}>
@@ -48,12 +51,15 @@ export default async function AnimalDetailsPage({ params }) {
       </div>
 
       <div className={classes.details}>
-        <h1>{animal.name}</h1>
+        <h1>{name}</h1>
         <p>
           <strong>Age:</strong> {animal.age}
         </p>
         <p>
           <strong>Species:</strong> {animal.species}
+        </p>
+        <p>
+          <strong>Breed:</strong> {animal.breed}
         </p>
         <p>
           <strong>Color:</strong> {animal.color}

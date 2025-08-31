@@ -43,6 +43,17 @@ export default function AddAnimalForm() {
           </div>
 
           <div>
+            <label htmlFor="breed">Breed</label>
+            <input
+              className={classes.inputForm}
+              id="breed"
+              name="breed"
+              placeholder="Breed"
+              required
+            />
+          </div>
+
+          <div>
             <label htmlFor="color">Color</label>
             <input
               className={classes.inputForm}
