@@ -4,6 +4,18 @@ import RequestCard from "@/lib/users/components/cards/RequestCard";
 import { verifyAuth } from "@/lib/users/auth";
 import { redirect } from "next/navigation";
 
+function formatKZ(dateStrUtc) {
+  const d = new Date(dateStrUtc.replace(" ", "T") + "Z");
+  return d.toLocaleString("kk-KZ", {
+    timeZone: "Asia/Almaty",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 export default async function RequestPage() {
   const { user, session } = await verifyAuth();
 
@@ -28,8 +40,11 @@ export default async function RequestPage() {
       {user && session && (
         <div className={classes.requestsWrap}>
           <section className={classes.container}>
-            {requests.map((request, index) => (
-              <RequestCard key={index} request={request} />
+            {requests.map((request) => (
+              <RequestCard
+                key={request.id}
+                request={{ ...request, date: formatKZ(request.created_at) }}
+              />
             ))}
           </section>
         </div>

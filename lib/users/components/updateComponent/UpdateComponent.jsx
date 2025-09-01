@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { useActionState } from "react";
 import { useRouter } from "next/navigation";
-import { useFormStatus } from "react-dom";
 
 import classes from "./UpdateComponent.module.css";
 import { updateAnimalAction } from "@/lib/users/components/updateComponent/UpdateAnimalAction";
