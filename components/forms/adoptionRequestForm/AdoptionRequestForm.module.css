@@ -67,6 +67,7 @@
     min-height: 120px;
     resize: vertical;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 .textAreaForm:focus {

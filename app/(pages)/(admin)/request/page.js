@@ -1,9 +1,10 @@
 import classes from "./page.module.css";
 import { getRequests } from "@/lib/users/getRequests";
-import RequestCard from "@/lib/users/components/cards/RequestCard";
 import { verifyAuth } from "@/lib/users/auth";
 import { redirect } from "next/navigation";
+import RequestsList from "@/lib/users/components/requests/requestList/RequestList";
 
+// date conversion
 function formatKZ(dateStrUtc) {
   const d = new Date(dateStrUtc.replace(" ", "T") + "Z");
   return d.toLocaleString("kk-KZ", {
@@ -17,38 +18,31 @@ function formatKZ(dateStrUtc) {
 }
 
 export default async function RequestPage() {
+  // user verification
   const { user, session } = await verifyAuth();
-
-  if (!user && !session) {
-    redirect("/");
-  }
+  if (!user && !session) redirect("/");
 
   const requests = await getRequests();
-
   if (!requests || requests.length === 0) {
     return (
-      <div className={classes.requestsWrap}>
-        <section className={classes.container}>
-          <h1 className={classes.noRequests}>No requests</h1>
+      <div className={classes.requestPage}>
+        <section className={classes.requestContainer}>
+          <p className={classes.noRequests}>No requests found</p>
         </section>
       </div>
     );
   }
 
+  const prepared = requests.map((r) => ({
+    ...r,
+    date: formatKZ(r.created_at),
+  }));
+
   return (
-    <>
-      {user && session && (
-        <div className={classes.requestsWrap}>
-          <section className={classes.container}>
-            {requests.map((request) => (
-              <RequestCard
-                key={request.id}
-                request={{ ...request, date: formatKZ(request.created_at) }}
-              />
-            ))}
-          </section>
-        </div>
-      )}
-    </>
+    <div className={classes.requestPage}>
+      <section className={classes.requestContainer}>
+        <RequestsList initialRequests={prepared} />
+      </section>
+    </div>
   );
 }
