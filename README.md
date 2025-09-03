@@ -1,7 +1,7 @@
 # Animal Shelter
 
 ## Demo Video
-[![Watch the video](public/HomePage.png)](https://youtu.be/ScRUUgNKcsg)
+[![Watch the video](public/Preview.png)](https://youtu.be/ScRUUgNKcsg)
 
 ## Overview
 
