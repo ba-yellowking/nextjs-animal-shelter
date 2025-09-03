@@ -14,7 +14,7 @@ export default function AddAnimalForm() {
   return (
     <div className={classes.wrapper}>
       <h2 className={classes.title}>Add a New Animal</h2>
-      {/*server action*/}
+
       <form className={classes.form} action={formAction}>
         <div className={classes.field}>
           <label htmlFor="name">Name</label>

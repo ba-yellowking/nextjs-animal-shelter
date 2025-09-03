@@ -1,39 +1,55 @@
-# Animal Shelter Platform
+# Animal Shelter
+
+## Demo Video
+[![Watch the video](public/HomePage.png)](https://youtu.be/ScRUUgNKcsg)
 
 ## Overview
 
-This is a web-based application built with **Next.js** (using both client and server components) and **React**, designed to simplify the process of adopting animals from shelters and to support them through donations.
+This is a web application built with **Next.js**, designed as a social project to support animal shelters and address the issue of abandoned pets.
+
+## Goal
+
+Its primary goal is to help animals find a new home and owners, while also easing the financial burden on shelters and potentially reducing government spending on animal control.
+
+Beyond direct adoptions, the platform also serves to raise public awareness, encouraging people to be more responsible and informed about animal welfare.
+
+By providing an accessible online space, it creates a bridge between shelters and the community, promoting compassion, responsibility, and long-term support for animals in need.
 
 ## Tech Stack
 
 - **Framework:** Next.js (React)
 - **Database:** better-sqlite3
+- **Authentication:** Lucia (cookie-based sessions)
+- **Password Hashing:** bcryptjs
 - **Styling:** CSS Modules
-- **Routing:** File-based routing (/app/page.js)
-- **Deployment:** TBD
+- **Routing:** File-based routing (`/app/page.js`)
 
 ## Key Features
 
-- **Animal RequestCard** – each animal is shown as a card on the listing page, displaying name, photo, and key info.
-- **Routing** – clean and dynamic routing for each animal using slugs (`/animals/max`, etc.).
-- **Database** – built using **better-sqlite3** for fast and simple data storage.
-- **API Routes** – dynamic and RESTful API endpoints to fetch animal data.
-- **Styling** – using **CSS Modules** for scoped and modular styles.
-- **Error Handling** – custom `404` and `Error` pages.
+- **Animal Page** – all users can browse the full list of animals, view individual animal detail pages, and select a pet they are interested in.
+- **Adoption Requests** – unregistered users can "reserve" an animal by submitting a request form with their name, email, phone number, and other info.
+- **Admin Panel** – animal shelters can register, authenticate, and access an administrative dashboard. From there, they can:
+    * View all incoming requests in chronological order with full user details.
+    * Assign a status to each request: _pending_, _fulfilled_, or _rejected_.
+    * Filter requests by status to manage large volumes more efficiently.
+    * Add new animal cards to the listing.
+    * Edit or delete existing animal cards.
 
 ## Planned Improvements
 
-- **AdoptionDetailsTwo Request Submission** - Submitted data about users willing to adopt a pet, stored on the server.
-- **Donation Option** - API to be determined.
-- **Admin Panel** - Admin login & authorization to add, edit, delete animal cards
-- **Server-side Internationalization** - Implement locale-based routing using server components (next-intl)
-- **Responsive Improvements** - Further UI/UX polish across devices
-- **Adaptive Layout** - Improve responsiveness for various screen sizes
+- **Donation Page** – implement a secure donation option.
+- **Cloud Deployment & Scaling** – move the entire logic to a cloud server to ensure scalability and reliability.
+- **Pilot Program** – launch a pilot to test adoption workflows and gather feedback for improvements.
 
 ## Screenshots
+### Home page
+![Home Page](public/HomePage.png)
 
-### Home Page
-![Home Page](public/Screenshot1.png)
+### Animals
+![Animals](public/AnimalList.png)
 
-### Animal Detail Page
-![Animal Detail Page](public/Screenshot2.png)
+### Requests
+![Requests](public/Requests.png)
+
+### Requests
+![RequestForm](public/RequestForm.png)

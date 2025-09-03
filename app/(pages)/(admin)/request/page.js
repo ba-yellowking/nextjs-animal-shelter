@@ -23,6 +23,7 @@ export default async function RequestPage() {
   if (!user && !session) redirect("/");
 
   const requests = await getRequests();
+
   if (!requests || requests.length === 0) {
     return (
       <div className={classes.requestPage}>

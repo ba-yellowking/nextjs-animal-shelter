@@ -6,9 +6,10 @@ import FilterStatus from "@/lib/users/components/requests/filterStatus/FilterSta
 import RequestCard from "@/lib/users/components/requests/cards/RequestCard";
 
 export default function RequestsList({ initialRequests }) {
-  const [filter, setFilter] = useState(""); // "" = All
+  const [filter, setFilter] = useState("");
   const [requests, setRequests] = useState(initialRequests);
 
+  // filtration
   const visible = useMemo(() => {
     return filter ? requests.filter((r) => r.status === filter) : requests;
   }, [filter, requests]);

@@ -1,4 +1,4 @@
-.update {
+.updateButton {
     border: none;
     background: transparent;
     padding: 6px;
@@ -9,17 +9,18 @@
     align-items: center;
     justify-content: center;
 }
-.update:hover {
+.updateButton:hover {
     background: rgba(0, 0, 0, 0.06);
 }
 
-/* inline form container */
-.inlineForm {
-    margin-top: 12px;
-    padding: 14px;
-    border: 1px solid rgba(0,0,0,.08);
-    border-radius: 12px;
-    background: #fff;
+.wrapper {
+    padding: 20px;
+    border-radius: 4px;
+    min-width: 400px;
+    max-width: 600px;
+    margin: 0 auto;
+    cursor: default;
+    background-color: #ffffff;
     box-shadow:
             0 1px 2px rgba(0,0,0,.04),
             0 4px 16px rgba(0,0,0,.04);
@@ -28,12 +29,21 @@
     animation: pop-in .14s ease-out both;
 }
 
-@keyframes pop-in {
-    from { opacity: 0; transform: translateY(-2px); }
-    to   { opacity: 1; transform: translateY(0); }
+.title {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
 }
 
-/* rows */
+.inlineForm {
+    padding: 20px;
+    border-radius: 4px;
+    display: grid;
+    gap: 12px;
+}
+
 .row {
     display: grid;
     grid-template-columns: 120px 1fr;
@@ -42,12 +52,11 @@
 }
 
 .label {
-    font-size: 0.9rem;
+    font-size: 16px;
     font-weight: 600;
     color: #374151; /* gray-700 */
 }
 
-/* inputs */
 .input,
 .textarea,
 .file {
@@ -56,7 +65,7 @@
     background: #fff;
     color: #111827; /* gray-900 */
     border: 1px solid #e5e7eb; /* gray-200 */
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 9px 11px;
     transition: border-color .12s ease, box-shadow .12s ease, background-color .12s ease;
 }
@@ -70,12 +79,12 @@
 .textarea:focus,
 .file:focus {
     outline: none;
-    border-color: #2563eb; /* primary */
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+    border-color: #465C86;
 }
 
 .textarea {
     min-height: 88px;
+    max-height: 120px;
     resize: vertical;
 }
 
@@ -128,34 +137,7 @@
     color: #065f46; /* emerald-800 */
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
     .row { grid-template-columns: 1fr; }
     .label { margin-bottom: 4px; }
-}
-
-@media (prefers-color-scheme: dark) {
-    .inlineForm {
-        background: #0b0f14;
-        border-color: rgba(255,255,255,.08);
-        box-shadow:
-                0 1px 2px rgba(0,0,0,.5),
-                0 6px 24px rgba(0,0,0,.35);
-    }
-
-    .label { color: #e5e7eb; }
-    .input,
-    .textarea,
-    .file {
-        background: #0e141a;
-        color: #e5e7eb;
-        border-color: #1f2937; /* gray-800 */
-    }
-    .input::placeholder,
-    .textarea::placeholder { color: #6b7280; }
-
-    .ghost {
-        border-color: #1f2937;
-        color: #e5e7eb;
-    }
-    .ghost:hover { background: #111827; }
 }

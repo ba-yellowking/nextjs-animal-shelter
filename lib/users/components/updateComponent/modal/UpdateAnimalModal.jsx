@@ -15,7 +15,7 @@ export default function UpdateAnimalModal({ animal }) {
     <>
       <button
         type="button"
-        className={classes.update}
+        className={classes.updateButton}
         onClick={open}
         title="Edit"
         aria-label="Edit"
