@@ -1,8 +1,15 @@
+.animalList {
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+    margin: 20px;
+}
+
 .container {
     display: grid;
     gap: 30px;
     margin: 20px;
-    width: 1200px;
+    /*width: 1200px;*/
     grid-template-columns: repeat(3, 1fr);
 }
 

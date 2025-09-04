@@ -19,6 +19,7 @@ export default function RequestCard({ request, onStatusChange }) {
 
   const [visibleMessage, setVisibleMessage] = useState(false);
 
+  // status update notification
   useEffect(() => {
     if (formStatus.message) setVisibleMessage(true);
     const t = setTimeout(() => setVisibleMessage(false), 5_000);

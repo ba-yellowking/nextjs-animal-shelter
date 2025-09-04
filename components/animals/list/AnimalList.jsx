@@ -1,23 +1,11 @@
 import { getAnimals } from "@/lib/animals/getAnimals";
-import AnimalCard from "@/components/animals/cards/AnimalCard";
-import classes from "./AnimalList.module.css";
+import AnimalListClient from "@/components/animals/list/AnimalListClient";
+import { verifyAuth } from "@/lib/users/auth";
 
-export default function AnimalList() {
-  const animals = getAnimals();
+export default async function AnimalList() {
+  const animals = await getAnimals();
+  const { user, session } = await verifyAuth();
+  const canEdit = Boolean(user && session);
 
-  if (!animals || animals.length === 0) {
-    return (
-      <div className={classes.container}>
-        <h1 className={classes.noAnimals}>No animals</h1>
-      </div>
-    );
-  }
-
-  return (
-    <div className={classes.container}>
-      {animals.map((animal) => (
-        <AnimalCard key={animal.id} animal={animal} />
-      ))}
-    </div>
-  );
+  return <AnimalListClient animals={animals} canEdit={canEdit} />;
 }

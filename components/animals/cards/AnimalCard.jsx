@@ -1,14 +1,11 @@
 import classes from "./AnimalCard.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { verifyAuth } from "@/lib/users/auth";
 import DeleteComponent from "@/lib/users/components/deleteComponent/DeleteComponent";
 import UpdateAnimalModal from "@/lib/users/components/updateComponent/modal/UpdateAnimalModal";
 import CapitalizeWords from "@/helpers/CapitalizeWords";
 
-export default async function AnimalCard({ animal }) {
-  const { user, session } = await verifyAuth();
-
+export default function AnimalCard({ animal, canEdit }) {
   const name = CapitalizeWords(animal.name);
 
   return (
@@ -18,7 +15,7 @@ export default async function AnimalCard({ animal }) {
           {name}
         </Link>
 
-        {user && session && (
+        {canEdit && (
           <div className={classes.controls}>
             <UpdateAnimalModal animal={animal} />
             <DeleteComponent id={animal.id} />
