@@ -1,5 +1,5 @@
 import { getAnimals } from "@/lib/animals/getAnimals";
-import AnimalListClient from "@/components/animals/list/AnimalListClient";
+import AnimalListClient from "@/components/animals/animalList/list/AnimalListClient";
 import { verifyAuth } from "@/lib/users/auth";
 
 export default async function AnimalList() {

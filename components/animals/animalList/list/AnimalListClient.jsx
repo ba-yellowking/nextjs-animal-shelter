@@ -2,7 +2,7 @@
 
 import classes from "./AnimalListClient.module.css";
 import FilterSpecies from "@/components/filterSpecies/FilterSpecies";
-import AnimalCard from "@/components/animals/cards/AnimalCard";
+import AnimalCard from "@/components/animals/animalList/cards/AnimalCard";
 import { useMemo, useState } from "react";
 
 export default function AnimalListClient({ animals, canEdit }) {

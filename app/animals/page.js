@@ -1,6 +1,6 @@
 import classes from "./page.module.css";
 import { Suspense } from "react";
-import AnimalList from "@/components/animals/list/AnimalList";
+import AnimalList from "@/components/animals/animalList/AnimalList";
 import Notification from "@/app/animals/Notification";
 
 export const metadata = {

@@ -6,11 +6,13 @@ import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
 import { verifyAuth } from "@/lib/users/auth";
 import { LogOutAction } from "@/lib/users/actions/auth/LogOutAction";
 import Button from "@/ui/button/Button";
+import getUser from "@/lib/users/getUser";
 
 export const dynamic = "force-dynamic";
 
 export default async function Header() {
   const { user, session } = await verifyAuth();
+  const email = getUser(user.id);
 
   return (
     <header className={classes.header}>
@@ -73,6 +75,7 @@ export default async function Header() {
               </div>
             </div>
             <div className={classes.adminLogOut}>
+              {email && <div className={classes.adminEmail}>{email}</div>}
               <form action={LogOutAction}>
                 <Button title="Log out"></Button>
               </form>

@@ -139,6 +139,10 @@
     gap: 20px;
 }
 
+.adminEmail {
+    color: #ffffff;
+}
+
 @media (max-width: 900px) {
     .content {
         width: 100%;
