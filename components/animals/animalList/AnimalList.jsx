@@ -1,4 +1,4 @@
-import { getAnimals } from "@/lib/animals/getAnimals";
+import { getAnimals } from "@/lib/animals/repo/getAnimals";
 import AnimalListClient from "@/components/animals/animalList/list/AnimalListClient";
 import { verifyAuth } from "@/lib/users/auth";
 

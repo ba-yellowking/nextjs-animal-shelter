@@ -1,5 +1,6 @@
 .filter {
     width: 100%;
+    min-width: 380px;
     height: 50px;
     display: flex;
     justify-content: flex-start;

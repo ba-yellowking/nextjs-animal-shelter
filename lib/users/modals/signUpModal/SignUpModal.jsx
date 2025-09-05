@@ -2,10 +2,10 @@
 
 import useModal from "@/hooks/useModal";
 import Modal from "@/ui/modal/Modal";
-import AddUserForm from "@/lib/users/forms/addUserForm/AddUserForm";
+import SignUpForm from "@/lib/users/forms/signUpForm/SignUpForm";
 import Button from "@/ui/button/Button";
 
-export default function AddUserModal() {
+export default function SignUpModal() {
   const [isOpen, open, close] = useModal();
 
   return (
@@ -14,7 +14,7 @@ export default function AddUserModal() {
 
       {isOpen && (
         <Modal onClose={close}>
-          <AddUserForm />
+          <SignUpForm />
         </Modal>
       )}
     </main>

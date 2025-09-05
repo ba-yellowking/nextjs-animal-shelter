@@ -31,6 +31,9 @@
 .name {
     width: 75%;
 }
+.species {
+    width: 25%;
+}
 
 .lastRow {
     display: flex;

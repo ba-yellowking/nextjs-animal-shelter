@@ -2,7 +2,7 @@
 
 import classes from "./AddAnimalForm.module.css";
 import ImagePicker from "@/components/images/imagePicker/ImagePicker";
-import { submitNewAnimal } from "@/actions/submitNewAnimal";
+import { submitNewAnimal } from "@/lib/animals/actions/submitNewAnimal";
 import SubmitPending from "@/components/forms/SubmitPending";
 import { useActionState } from "react";
 
@@ -28,7 +28,7 @@ export default function AddAnimalForm() {
             />
           </div>
 
-          <div className={classes.field}>
+          <div className={classes.species}>
             <label htmlFor="species">Species</label>
             <select
               className={classes.inputForm}

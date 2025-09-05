@@ -1,5 +1,5 @@
 import classes from "./page.module.css";
-import { getRequests } from "@/lib/users/getRequests";
+import { getRequests } from "@/lib/users/repo/getRequests";
 import { verifyAuth } from "@/lib/users/auth";
 import { redirect } from "next/navigation";
 import RequestsList from "@/lib/users/components/requests/requestList/RequestList";

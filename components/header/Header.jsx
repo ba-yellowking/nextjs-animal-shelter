@@ -1,12 +1,12 @@
 import classes from "./Header.module.css";
 import Link from "next/link";
-import AddUserModal from "@/lib/users/modals/addUserModal/AddUserModal";
+import SignUpModal from "@/lib/users/modals/signUpModal/SignUpModal";
 import AuthorizeModal from "@/lib/users/modals/authorizeModal/AuthorizeModal";
-import AddAnimalModal from "@/modals/addAnimalModal/AddAnimalModal";
+import AddAnimalModal from "@/lib/animals/modals/addAnimalModal/AddAnimalModal";
 import { verifyAuth } from "@/lib/users/auth";
 import { LogOutAction } from "@/lib/users/actions/auth/LogOutAction";
 import Button from "@/ui/button/Button";
-import getUser from "@/lib/users/getUser";
+import getUser from "@/lib/users/repo/getUser";
 
 export const dynamic = "force-dynamic";
 
@@ -59,7 +59,7 @@ export default async function Header() {
                 <AuthorizeModal />
               </div>
               <div className={classes.authModal}>
-                <AddUserModal />
+                <SignUpModal />
               </div>
             </div>
           </>

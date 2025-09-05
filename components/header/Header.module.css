@@ -171,6 +171,10 @@
         display: inline-block;
         font-size: 18px;
     }
+
+    .adminEmail {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -205,6 +209,9 @@
         font-size: 16px;
     }
 
+    .adminEmail {
+        display: none;
+    }
 }
 
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import classes from "./page.module.css";
-import { getAnimalBySlug } from "@/lib/animals/getAnimalsBySlug";
-import AdoptionRequestModal from "@/modals/adoptionRequestModal/AdoptionRequestModal";
+import { getAnimalBySlug } from "@/lib/animals/repo/getAnimalsBySlug";
+import AdoptionRequestModal from "@/lib/animals/modals/adoptionRequestModal/AdoptionRequestModal";
 import { verifyAuth } from "@/lib/users/auth";
 import CapitalizeWords from "@/helpers/CapitalizeWords";
 

@@ -1,11 +1,11 @@
 "use client";
 
-import classes from "./AddUserForm.module.css";
+import classes from "./SignUpForm.module.css";
 import { useActionState } from "react";
 import { SignUpAction } from "@/lib/users/actions/auth/SignUpAction";
 import Button from "@/ui/button/Button";
 
-export default function AddUserForm() {
+export default function SignUpForm() {
   const [formState, formAction] = useActionState(SignUpAction, {
     errors: null,
   });
