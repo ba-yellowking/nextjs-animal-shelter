@@ -12,7 +12,11 @@ export const dynamic = "force-dynamic";
 
 export default async function Header() {
   const { user, session } = await verifyAuth();
-  const email = getUser(user.id);
+
+  let email = null;
+  if (user && session) {
+    email = await getUser(user.id);
+  }
 
   return (
     <header className={classes.header}>

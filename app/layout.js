@@ -7,8 +7,7 @@ initDb();
 
 export const metadata = {
   title: "Animal Shelter",
-  description:
-    "Animal Shelter for stray cats and dogs founded in Kazakhstan, Astana",
+  description: "Animal Shelter for stray cats and dogs",
 };
 
 export default function RootLayout({ children }) {

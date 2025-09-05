@@ -4,8 +4,8 @@ import AnimalList from "@/components/animals/animalList/AnimalList";
 import Notification from "@/app/animals/Notification";
 
 export const metadata = {
-  title: "Animal list",
-  description: "Animal list for adoption",
+  title: "Animal Page - Animal Shelter",
+  description: "Animals for adoption",
 };
 
 export default function Animals() {

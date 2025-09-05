@@ -5,6 +5,9 @@
     margin-bottom: 1rem;
 }
 
+.picker {
+}
+
 .picker .input {
     display: none;
 }
@@ -27,8 +30,8 @@
 }
 
 .preview {
-    width: 10rem;
-    height: 10rem;
+    width: 220px;
+    height: 160px;
     border: 2px solid #F9F9F9;
     display: flex;
     justify-content: center;
@@ -36,14 +39,21 @@
     text-align: center;
     color: #333;
     position: relative;
-    font-size: 18px;
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
 }
 
 .preview p {
     margin: 0;
     padding: 1rem;
+    font-size: 18px;
 }
 
 .preview img {
     object-fit: cover;
+}
+
+.preview:hover {
+    cursor: pointer;
+    background-color: #F9F9F9;
 }

@@ -2,12 +2,12 @@
 
 import classes from "./AddAnimalForm.module.css";
 import ImagePicker from "@/components/images/imagePicker/ImagePicker";
-import { submitNewAnimal } from "@/app/actions/submitNewAnimal";
+import { submitNewAnimal } from "@/actions/submitNewAnimal";
 import SubmitPending from "@/components/forms/SubmitPending";
 import { useActionState } from "react";
 
 export default function AddAnimalForm() {
-  const [state, formAction] = useActionState(submitNewAnimal, {
+  const [formState, formAction] = useActionState(submitNewAnimal, {
     message: null,
   });
 
@@ -16,19 +16,19 @@ export default function AddAnimalForm() {
       <h2 className={classes.title}>Add a New Animal</h2>
 
       <form className={classes.form} action={formAction}>
-        <div className={classes.field}>
-          <label htmlFor="name">Name</label>
-          <input
-            className={classes.inputForm}
-            id="name"
-            name="name"
-            placeholder="Name"
-            required
-          />
-        </div>
-
         <div className={classes.fieldRow}>
-          <div>
+          <div className={classes.name}>
+            <label htmlFor="name">Name</label>
+            <input
+              className={classes.inputForm}
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+          </div>
+
+          <div className={classes.field}>
             <label htmlFor="species">Species</label>
             <select
               className={classes.inputForm}
@@ -41,7 +41,9 @@ export default function AddAnimalForm() {
               <option value="cat">Cat</option>
             </select>
           </div>
+        </div>
 
+        <div className={classes.fieldRow}>
           <div>
             <label htmlFor="breed">Breed</label>
             <input
@@ -49,17 +51,6 @@ export default function AddAnimalForm() {
               id="breed"
               name="breed"
               placeholder="Breed"
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="color">Color</label>
-            <input
-              className={classes.inputForm}
-              id="color"
-              name="color"
-              placeholder="Color"
               required
             />
           </div>
@@ -75,6 +66,17 @@ export default function AddAnimalForm() {
               placeholder="Age"
             />
           </div>
+
+          <div>
+            <label htmlFor="color">Color</label>
+            <input
+              className={classes.inputForm}
+              id="color"
+              name="color"
+              placeholder="Color"
+              required
+            />
+          </div>
         </div>
 
         <div className={classes.field}>
@@ -87,13 +89,16 @@ export default function AddAnimalForm() {
           />
         </div>
 
-        <ImagePicker name="image" />
-
-        {state.message && <p className={classes.status}>{state.message}</p>}
-
-        <div className={classes.pending}>
-          <SubmitPending text={"Add a friend"} />
+        <div className={classes.lastRow}>
+          <ImagePicker name="image" />
+          <div className={classes.pending}>
+            <SubmitPending text={"Submit"} />
+          </div>
         </div>
+
+        {formState.message && (
+          <p className={classes.status}>{formState.message}</p>
+        )}
       </form>
     </div>
   );

@@ -3,7 +3,7 @@
 import classes from "./AdoptionRequestForm.module.css";
 import SubmitPending from "@/components/forms/SubmitPending";
 import { useActionState, useState } from "react";
-import SubmitAdoptionRequest from "@/app/actions/submitAdoptionRequest";
+import SubmitAdoptionRequest from "@/actions/submitAdoptionRequest";
 
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";

@@ -4,6 +4,11 @@ import { verifyAuth } from "@/lib/users/auth";
 import { redirect } from "next/navigation";
 import RequestsList from "@/lib/users/components/requests/requestList/RequestList";
 
+export const metadata = {
+  title: "Request Page - Animal Shelter",
+  description: "Adoption requests from users",
+};
+
 // date conversion
 function formatKZ(dateStrUtc) {
   const d = new Date(dateStrUtc.replace(" ", "T") + "Z");

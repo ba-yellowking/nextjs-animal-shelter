@@ -28,6 +28,16 @@
     gap: 18px;
 }
 
+.name {
+    width: 75%;
+}
+
+.lastRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
 .field {
     display: flex;
     flex-direction: column;
@@ -65,10 +75,6 @@
     align-items: flex-start;
     padding: 10px 0;
 }
-.fieldRow > div:nth-child(2),
-.fieldRow > div:nth-child(3) {
-    flex: 1;
-}
 
 .textAreaForm {
     padding: 10px;
@@ -80,6 +86,7 @@
     width: 100%;
     max-width: 600px;
     min-height: 60px;
+    max-height: 60px;
     resize: vertical;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
@@ -89,12 +96,13 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .status {
     margin-top: 10px;
     font-weight: 500;
     font-size: 14px;
-    color: #28a745;
+    color: #ff0000;
     text-align: center;
 }

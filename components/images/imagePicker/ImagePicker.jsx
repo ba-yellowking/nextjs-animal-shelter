@@ -36,8 +36,8 @@ export default function ImagePicker({ label, name }) {
     <div className={classes.picker}>
       <label htmlFor={name}>{label}</label>
       <div className={classes.controls}>
-        <div className={classes.preview}>
-          {!pickedImage && <p>No image picked yet.</p>}
+        <div className={classes.preview} onClick={clickHandler}>
+          {!pickedImage && <p>Upload image</p>}
           {pickedImage && <Image src={pickedImage} alt="Selected image" fill />}
         </div>
         <input
@@ -50,10 +50,6 @@ export default function ImagePicker({ label, name }) {
           accept="image/png, image/jpeg"
           required
         />
-
-        <button type="button" className={classes.button} onClick={clickHandler}>
-          Select an Image
-        </button>
       </div>
     </div>
   );

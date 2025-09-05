@@ -35,6 +35,33 @@
     padding: 20px;
 }
 
+.errorWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: #F9F9F9;
+    font-family: "Verdana", sans-serif;
+    color: #2B3134;
+    padding: 30px;
+}
+.errorTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.errorContent {
+    font-size: 100px;
+    font-weight: bold;
+}
+.errorMessage {
+    font-size: 32px;
+    margin: 1rem 0;
+}
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;
@@ -54,8 +81,25 @@
     }
 }
 
+@media(max-width: 900px) {
+    .errorContent {
+        font-size: 80px;
+    }
+    .errorMessage {
+        font-size: 24px;
+    }
+}
+
 @media(max-width: 600px) {
     .animalsWrap {
         min-width: 400px;
+    }
+
+    .errorContent {
+        font-size: 60px;
+    }
+    .errorMessage {
+        font-size: 18px;
+        margin: 0.5rem 0;
     }
 }
